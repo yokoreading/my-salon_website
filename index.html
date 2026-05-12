@@ -453,12 +453,20 @@
     padding: 6px 18px;
   }
   .plan-name-jp {
-    font-family: var(--serif);
-    font-size: 32px;
-    font-weight: 700;
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 500;
     color: var(--gold-bright);
     margin-bottom: 6px;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
+  }
+  .plan-symbol {
+    font-size: 22px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 4px;
+    line-height: 1;
+    opacity: 0.9;
   }
   .plan-name-en {
     font-family: var(--latin);
@@ -527,6 +535,98 @@
   .plan-cta:hover {
     background: var(--gold);
     color: var(--ink);
+  }
+
+  /* ─── First Cohort additions ─── */
+  .first-cohort-banner {
+    text-align: center;
+    margin-bottom: 56px;
+    padding: 28px 24px;
+    border: 1px solid var(--gold);
+    background: linear-gradient(180deg, rgba(201,169,97,0.08), rgba(201,169,97,0.02));
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .first-cohort-banner .label {
+    font-family: var(--latin);
+    letter-spacing: 0.4em;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .first-cohort-banner .quota {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--paper);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .first-cohort-banner .quota .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 38px;
+    color: var(--gold-bright);
+    font-weight: 500;
+    margin: 0 6px;
+    letter-spacing: 0;
+  }
+  .first-cohort-banner .note {
+    font-size: 12px;
+    color: var(--moon);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+  }
+
+  .plan-quota {
+    display: inline-block;
+    font-family: var(--latin);
+    letter-spacing: 0.25em;
+    font-size: 10px;
+    color: var(--gold);
+    border: 1px solid var(--gold-deep);
+    padding: 4px 12px;
+    margin-bottom: 18px;
+  }
+  .plan-original-price {
+    font-size: 12px;
+    color: var(--moon);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  .plan-original-price small {
+    margin-right: 4px;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  .plan-tier-label {
+    font-family: var(--latin);
+    letter-spacing: 0.3em;
+    font-size: 9px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .plan-description {
+    font-size: 13px;
+    color: var(--moon);
+    line-height: 1.95;
+    text-align: left;
+    border-top: 1px solid var(--line-soft);
+    padding: 22px 4px 0;
+    margin-bottom: 22px;
+  }
+  .plans-note {
+    max-width: 760px;
+    margin: 48px auto 0;
+    padding: 22px 28px;
+    border-left: 2px solid var(--gold-deep);
+    background: rgba(201,169,97,0.04);
+    font-size: 13px;
+    color: var(--moon);
+    line-height: 2;
   }
 
   /* ─── Rules ─── */
@@ -978,58 +1078,93 @@
       <span class="eyebrow-line"></span>
       <h2 class="section-title">あなたに合う、進み方を。</h2>
       <p class="section-sub">
-        自分のペースで深めるか、仲間と歩むか、専属で受けるか。<br>
+        自分のペースで深めるか、仲間と歩むか、個別で受けるか。<br>
         3ヶ月のプログラム期間中、サポート量に応じた3つの選択肢。
       </p>
 
+      <div class="first-cohort-banner">
+        <span class="label">FIRST COHORT — 第1期 初期パートナー募集</span>
+        <div class="quota">総定員 <span class="num">11</span> 名</div>
+        <p class="note">LUNA 3名 ／ JUPITER 7名 ／ SUN 1名<br>少人数で、第1期生として丁寧にお迎えします。</p>
+      </div>
+
       <div class="plan-grid">
-        <!-- 梅 -->
+        <!-- LUNA -->
         <div class="plan">
-          <div class="plan-name-jp">plum</div>
-          <div class="plan-name-en">SELF</div>
-          <div class="plan-price">¥88,000<small>〜</small></div>
-          <div class="plan-tax">（税込・3ヶ月一括）</div>
+          <div class="plan-tier-label">— FIRST COHORT —</div>
+          <span class="plan-symbol">☽</span>
+          <div class="plan-name-jp">LUNA</div>
+          <div class="plan-name-en">BASIC</div>
+          <div class="plan-quota">3 名 限 定</div>
+          <div class="plan-original-price"><small>通常価格</small>¥98,000</div>
+          <div class="plan-price">¥78,000</div>
+          <div class="plan-tax">（税込・3ヶ月一括／第1期パートナー価格）</div>
+          <p class="plan-description">
+            講義・アーカイブ・PDFを通して、ご自身のペースで学ぶプランです。質疑応答・添削・個別フィードバックは含まれません。ご自身で学びを進められる方、まずはAIやITへの苦手意識を少しずつ減らしたい方に向いています。
+          </p>
           <ul>
             <li>動画講座 全コンテンツ視聴</li>
-            <li>テキスト・資料一式</li>
+            <li>テキスト・資料一式（PDF）</li>
             <li>自分のペースで進行</li>
+            <li class="muted">質疑応答・添削</li>
             <li class="muted">グループレッスン</li>
             <li class="muted">個別コンサルティング</li>
           </ul>
           <a href="#final" class="plan-cta">このプランを選ぶ</a>
         </div>
 
-        <!-- 竹 -->
+        <!-- JUPITER -->
         <div class="plan featured">
-          <div class="plan-name-jp">竹</div>
+          <div class="plan-tier-label">— FIRST COHORT —</div>
+          <span class="plan-symbol">♃</span>
+          <div class="plan-name-jp">JUPITER</div>
           <div class="plan-name-en">STANDARD</div>
-          <div class="plan-price">¥218,000</div>
-          <div class="plan-tax">（税込・3ヶ月一括）</div>
+          <div class="plan-quota">7 名 限 定</div>
+          <div class="plan-original-price"><small>通常価格</small>¥218,000</div>
+          <div class="plan-price">¥178,000</div>
+          <div class="plan-tax">（税込・3ヶ月一括／第1期パートナー価格）</div>
+          <p class="plan-description">
+            今回の中心となる実践プランです。講義や資料を見るだけでなく、ご自身の発信・仕事・商品づくりに落とし込むための質問・実践・フィードバックを含みます。AIやITに苦手意識がある方、自分の場合はどう使えばいいか確認しながら進めたい方は、こちらをおすすめします。
+          </p>
           <ul>
             <li>動画講座 全コンテンツ視聴</li>
-            <li>テキスト・資料一式</li>
+            <li>テキスト・資料一式（PDF）</li>
             <li>月1回 グループレッスン（Zoom）</li>
             <li>質問対応・カスタマイズ相談</li>
+            <li>実践フィードバック</li>
             <li class="muted">個別コンサルティング</li>
           </ul>
           <a href="#final" class="plan-cta">このプランを選ぶ</a>
         </div>
 
-        <!-- 松 -->
+        <!-- SUN -->
         <div class="plan">
-          <div class="plan-name-jp">松</div>
-          <div class="plan-name-en">VIP</div>
-          <div class="plan-price">¥398,000<small>〜</small></div>
-          <div class="plan-tax">（税込・3ヶ月一括）</div>
+          <div class="plan-tier-label">— PRIVATE GUIDANCE —</div>
+          <span class="plan-symbol">☉</span>
+          <div class="plan-name-jp">SUN</div>
+          <div class="plan-name-en">PERSONAL</div>
+          <div class="plan-quota">1 名 限 定</div>
+          <div class="plan-price">¥498,000</div>
+          <div class="plan-tax">（税込・3ヶ月一括／通常価格）</div>
+          <p class="plan-description">
+            第1期で1名様のみの完全個別伴走プランです。3ヶ月間で、ご自身の発信・商品設計・AI活用・今後の動き方を個別に整理していきます。個別セッションや事前ワークを含むため、一定の時間を確保して深く取り組みたい方に向いています。
+          </p>
           <ul>
             <li>動画講座 全コンテンツ視聴</li>
-            <li>テキスト・資料一式</li>
+            <li>テキスト・資料一式（PDF）</li>
             <li>月1回 グループレッスン（Zoom）</li>
             <li>個別コンサルティング</li>
             <li>ホロスコープ詳細読み・戦略立案</li>
+            <li>事前ワーク付き個別セッション</li>
           </ul>
           <a href="#final" class="plan-cta">このプランを選ぶ</a>
         </div>
+      </div>
+
+      <div class="plans-note">
+        <strong style="color:var(--paper);letter-spacing:0.08em;">※ 第1期パートナー価格について</strong><br>
+        LUNA・JUPITERプランは、第1期パートナー価格でのご案内です。第2期以降は通常価格でのご案内を予定しています。<br>
+        SUNプランは完全個別伴走のため、第1期も通常価格でのご案内となります。
       </div>
     </div>
   </section>
