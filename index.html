@@ -537,6 +537,128 @@
     color: var(--ink);
   }
 
+  /* ─── Three Moons (Journey) ─── */
+  .journey {
+    background:
+      linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 60%, var(--ink) 100%);
+    position: relative;
+  }
+  .journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .journey-grid::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 16.66%;
+    right: 16.66%;
+    height: 1px;
+    background: linear-gradient(to right,
+      var(--gold-deep) 0%,
+      var(--gold) 50%,
+      var(--gold-bright) 100%);
+    opacity: 0.45;
+    z-index: 0;
+  }
+  .journey-card {
+    padding: 0 28px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .journey-moon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 28px;
+    display: block;
+    color: var(--gold-bright);
+    background: var(--ink);
+    border-radius: 50%;
+    padding: 8px;
+  }
+  .journey-num {
+    font-family: var(--latin);
+    letter-spacing: 0.4em;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .journey-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--paper);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .journey-subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--moon);
+    margin-bottom: 28px;
+    letter-spacing: 0.04em;
+  }
+  .journey-points {
+    list-style: none;
+    text-align: left;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    margin: 0 8px;
+  }
+  .journey-points li {
+    font-size: 13px;
+    color: var(--moon);
+    line-height: 1.95;
+    padding: 10px 0 10px 22px;
+    position: relative;
+    border-bottom: 1px dotted var(--line-soft);
+  }
+  .journey-points li:last-child { border-bottom: none; }
+  .journey-points li::before {
+    content: "✦";
+    position: absolute;
+    left: 0; top: 11px;
+    color: var(--gold);
+    font-size: 10px;
+  }
+  .journey-after {
+    max-width: 720px;
+    margin: 70px auto 0;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid var(--line);
+    background: rgba(201,169,97,0.03);
+  }
+  .journey-after-label {
+    font-family: var(--latin);
+    letter-spacing: 0.4em;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .journey-after p {
+    font-size: 14px;
+    color: var(--moon);
+    line-height: 2.1;
+  }
+  .journey-after p em {
+    font-style: normal;
+    color: var(--gold-bright);
+    border-bottom: 1px solid var(--gold-deep);
+    padding-bottom: 2px;
+  }
+  @media (max-width: 880px) {
+    .journey-grid { grid-template-columns: 1fr; gap: 50px; }
+    .journey-grid::before { display: none; }
+    .journey-card { padding: 0; }
+  }
+
   /* ─── First Cohort additions ─── */
   .first-cohort-banner {
     text-align: center;
@@ -1071,6 +1193,87 @@
     </div>
   </section>
 
+  <!-- ════ THREE MOONS — JOURNEY ════ -->
+  <section class="journey">
+    <div class="wrap">
+      <div class="eyebrow">THREE MOONS</div>
+      <span class="eyebrow-line"></span>
+      <h2 class="section-title">3ヶ月の歩み、月ごとの到達点。</h2>
+      <p class="section-sub">
+        最初の1ヶ月は、整える。次の1ヶ月で、形にしていく。<br>
+        最後の1ヶ月で、日常へ組み込んでいく。<br>
+        ── 月の満ち欠けに重ねた、3つのフェーズです。
+      </p>
+
+      <div class="journey-grid">
+
+        <!-- Month 1 -->
+        <div class="journey-card">
+          <svg class="journey-moon" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+            <path d="M 32 10 A 22 22 0 0 1 32 54 A 14 22 0 0 0 32 10 Z" fill="currentColor" opacity="0.85"/>
+          </svg>
+          <div class="journey-num">FIRST MOON</div>
+          <h3 class="journey-title">第1ヶ月 — 整える</h3>
+          <div class="journey-subtitle">Foundation</div>
+          <ul class="journey-points">
+            <li>AIに自分のことを聞ける状態に慣れていく</li>
+            <li>Googleカレンダーの基本操作・カスタマイズに親しむ</li>
+            <li>自分のホロスコープの基礎情報を整理する</li>
+            <li>「揺らぎ日」「元気な日」など占星術用語の意味を確認する</li>
+            <li>AIへの質問の組み立て方を、少しずつ練習する</li>
+          </ul>
+        </div>
+
+        <!-- Month 2 -->
+        <div class="journey-card">
+          <svg class="journey-moon" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+            <path d="M 32 10 A 22 22 0 0 1 32 54 Z" fill="currentColor" opacity="0.85"/>
+          </svg>
+          <div class="journey-num">SECOND MOON</div>
+          <h3 class="journey-title">第2ヶ月 — 作り上げる</h3>
+          <div class="journey-subtitle">Construction</div>
+          <ul class="journey-points">
+            <li>自分専用の星読みカレンダーの土台を作っていく</li>
+            <li>AIで天体情報を整理・抽出する仕組みを組み立てる</li>
+            <li>Googleカレンダーへの登録と通知設計を進める</li>
+            <li>自分の生活リズムに合わせたカスタマイズを試す</li>
+            <li>つまずきポイントを、AIと一緒に解いていく</li>
+          </ul>
+        </div>
+
+        <!-- Month 3 -->
+        <div class="journey-card">
+          <svg class="journey-moon" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="22" fill="currentColor" opacity="0.85"/>
+            <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          </svg>
+          <div class="journey-num">THIRD MOON</div>
+          <h3 class="journey-title">第3ヶ月 — 日常へ</h3>
+          <div class="journey-subtitle">Integration</div>
+          <ul class="journey-points">
+            <li>カレンダー通知を見ながら、毎日の選択に活かしていく</li>
+            <li>自分なりの運用パターンを見つけていく</li>
+            <li>外部ツールの仕様変更への対応の考え方を学ぶ</li>
+            <li>3ヶ月以降も継続できる仕組みを残していく</li>
+            <li>振り返りを通して、次の月へ繋げる</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="journey-after">
+        <div class="journey-after-label">AFTER 3 MONTHS</div>
+        <p>
+          3ヶ月後、目指すのは<em>「占いを見に行く」生活から、「カレンダーが教えてくれる」生活へ</em>の移り変わり。<br>
+          完璧な完成形ではなく、自分の手で育てていける土台が残ります。<br>
+          ※ 進み方には個人差があります。手順に沿って取り組みやすい設計になっています。
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ════ PLANS ════ -->
   <section class="plans" id="plans">
     <div class="wrap">
@@ -1243,8 +1446,6 @@
         新しい光の流れに乗って、3ヶ月後のあなたへ。
       </p>
 
-
-     <!-- 
       <div class="timeline">
         <div class="step now">
           <div class="step-date">MAY (LATE)</div>
@@ -1263,7 +1464,6 @@
         </div>
       </div>
     </div>
-      -->
   </section>
 
   <!-- ════ FINAL CTA ════ -->
