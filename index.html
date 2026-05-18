@@ -687,6 +687,211 @@
     .journey-card { padding: 0; }
   }
 
+  /* ─── Curriculum ─── */
+  .curriculum {
+    background: var(--paper);
+    position: relative;
+  }
+  .curriculum-meta {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 720px;
+    margin: 0 auto 70px;
+    padding: 28px 32px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .curriculum-meta-item {
+    text-align: center;
+  }
+  .curriculum-meta-item .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 42px;
+    color: var(--gold-deep);
+    line-height: 1;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .curriculum-meta-item .label {
+    font-size: 13px;
+    color: var(--text-mute);
+    letter-spacing: 0.15em;
+  }
+  .phase-block {
+    max-width: 980px;
+    margin: 0 auto 56px;
+    padding: 48px 40px;
+    background: rgba(255,255,255,0.45);
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .phase-block::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 40px; height: 40px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+  }
+  .phase-header {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .phase-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 64px;
+    color: var(--gold-deep);
+    line-height: 1;
+    text-align: center;
+    font-weight: 500;
+  }
+  .phase-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+  .phase-subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold-deep);
+    letter-spacing: 0.04em;
+  }
+  .phase-weeks {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--text-mute);
+    font-weight: 500;
+  }
+  .phase-narrative {
+    font-size: 16px;
+    color: var(--text-mute);
+    line-height: 2.1;
+    margin-bottom: 32px;
+  }
+  .phase-narrative em {
+    font-style: normal;
+    color: var(--burgundy);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    font-weight: 700;
+  }
+  .phase-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+  }
+  .highlight {
+    padding: 22px 20px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--gold);
+  }
+  .highlight-label {
+    font-family: var(--latin);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .highlight-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.85;
+    font-weight: 500;
+  }
+  .phase-outcome {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: rgba(168, 132, 58, 0.06);
+    border-left: 3px solid var(--gold-deep);
+  }
+  .phase-outcome-label {
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .phase-outcome-text {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.95;
+    font-weight: 500;
+  }
+  .curriculum-gifts {
+    max-width: 980px;
+    margin: 80px auto 0;
+    text-align: center;
+    padding: 50px 40px;
+    border: 1px solid var(--gold);
+    background: linear-gradient(180deg, rgba(212,184,106,0.08), rgba(212,184,106,0.02));
+  }
+  .gifts-title {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .gifts-subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold-deep);
+    margin-bottom: 32px;
+  }
+  .gifts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px 28px;
+    text-align: left;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .gifts-list li {
+    list-style: none;
+    font-size: 15px;
+    color: var(--text-mute);
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.8;
+  }
+  .gifts-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0; top: 2px;
+    color: var(--gold);
+  }
+  @media (max-width: 880px) {
+    .phase-block { padding: 36px 26px; }
+    .phase-header { grid-template-columns: 60px 1fr; gap: 20px; }
+    .phase-num { font-size: 48px; }
+    .phase-highlights { grid-template-columns: 1fr; gap: 16px; }
+    .curriculum-meta { gap: 30px; padding: 24px; }
+    .curriculum-gifts { padding: 36px 26px; }
+  }
+
   /* ─── First Cohort additions (inside dark plans section) ─── */
   .first-cohort-banner {
     text-align: center;
@@ -1312,6 +1517,184 @@
           完璧な完成形ではなく、自分の手で育てていける土台が残ります。<br>
           ※ 進み方には個人差があります。手順に沿って取り組みやすい設計になっています。
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ CURRICULUM ════ -->
+  <section class="curriculum">
+    <div class="wrap">
+      <div class="eyebrow">CURRICULUM</div>
+      <span class="eyebrow-line"></span>
+      <h2 class="section-title">中で何を学ぶのか、ぜんぶ見せます。</h2>
+      <p class="section-sub">
+        小さなステップを積み重ねていく、12週間。<br>
+        AIに話しかけるところから始まり、最後は自分でカレンダーを延長できるところまで。<br>
+        「これなら、できるかもしれない」と思える設計です。
+      </p>
+
+      <div class="curriculum-meta">
+        <div class="curriculum-meta-item">
+          <span class="num">24</span>
+          <div class="label">本の動画レッスン</div>
+        </div>
+        <div class="curriculum-meta-item">
+          <span class="num">12</span>
+          <div class="label">週間プログラム</div>
+        </div>
+        <div class="curriculum-meta-item">
+          <span class="num">4</span>
+          <div class="label">つのフェーズ</div>
+        </div>
+        <div class="curriculum-meta-item">
+          <span class="num">5</span>
+          <div class="label">種類の配布物</div>
+        </div>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <div class="phase-num">01</div>
+          <div>
+            <div class="phase-title">AIと、話せるようになる。</div>
+            <div class="phase-subtitle">Getting Comfortable with AI</div>
+            <div class="phase-weeks">— WEEK 1 — 3 —</div>
+          </div>
+        </div>
+        <p class="phase-narrative">
+          いきなりカレンダーを作る前に、まず<em>「AIに話しかける」という新しい習慣</em>に慣れていく3週間です。「ChatGPTって聞いたことあるけど、何を聞けばいいの？」という最初の戸惑いから、「あ、こうやって聞けばいいのか」という小さな手応えへ。怖さを「相談できる感覚」に置き換えていく時間です。
+        </p>
+        <div class="phase-highlights">
+          <div class="highlight">
+            <div class="highlight-label">WEEK 1</div>
+            <div class="highlight-text">PC環境を整え、スクショの撮り方を覚える</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 2</div>
+            <div class="highlight-text">ChatGPT・Claude・Geminiの違いに触れてみる</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 3</div>
+            <div class="highlight-text">AIに「伝わる質問」を組み立てる練習をする</div>
+          </div>
+        </div>
+        <div class="phase-outcome">
+          <div class="phase-outcome-label">OUTCOME</div>
+          <div class="phase-outcome-text">「とりあえずAIに聞いてみる」が、自然な選択肢のひとつになる。</div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <div class="phase-num">02</div>
+          <div>
+            <div class="phase-title">Googleカレンダーを、自分の場所にする。</div>
+            <div class="phase-subtitle">Making the Calendar Yours</div>
+            <div class="phase-weeks">— WEEK 4 — 6 —</div>
+          </div>
+        </div>
+        <p class="phase-narrative">
+          Googleカレンダーを、ただの予定表から<em>「自分専用の星読みの場」</em>に変えていきます。色を使って意味を込め、スマホやタブレットとも同期して、毎朝の動線に組み込む。「カレンダーを開くだけで、その日の流れがわかる」── そんな小さな仕組みを整える期間です。
+        </p>
+        <div class="phase-highlights">
+          <div class="highlight">
+            <div class="highlight-label">WEEK 4</div>
+            <div class="highlight-text">「星読み」専用のカレンダーを新しく作る</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 5</div>
+            <div class="highlight-text">自分だけの「色マップ」を設計する</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 6</div>
+            <div class="highlight-text">スマホのウィジェットと通知を整える</div>
+          </div>
+        </div>
+        <div class="phase-outcome">
+          <div class="phase-outcome-label">OUTCOME</div>
+          <div class="phase-outcome-text">「自分の色」「自分の時間軸」が、日常のカレンダーに住み着く。</div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <div class="phase-num">03</div>
+          <div>
+            <div class="phase-title">AIから取り出し、カレンダーに流し込む。</div>
+            <div class="phase-subtitle">From AI to Your Calendar</div>
+            <div class="phase-weeks">— WEEK 7 — 9 —</div>
+          </div>
+        </div>
+        <p class="phase-narrative">
+          このプログラムの<em>技術的な"見せ場"</em>です。AIに月のサイン移動などの情報を表で答えてもらい、スプレッドシートで整え、CSVファイルにしてGoogleカレンダーへ一気に流し込む。「あ、これってこういう仕組みだったんだ」と、ITの背景がスッと腑に落ちる週でもあります。
+        </p>
+        <div class="phase-highlights">
+          <div class="highlight">
+            <div class="highlight-label">WEEK 7</div>
+            <div class="highlight-text">AIに表形式で情報を出してもらう聞き方を学ぶ</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 8</div>
+            <div class="highlight-text">スプレッドシートで形を整える</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 9</div>
+            <div class="highlight-text">CSVに変換してカレンダーに一括取り込み</div>
+          </div>
+        </div>
+        <div class="phase-outcome">
+          <div class="phase-outcome-label">OUTCOME</div>
+          <div class="phase-outcome-text">画面の向こうにある「AI → 表 → カレンダー」の流れが、自分の手で動かせるようになる。</div>
+        </div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <div class="phase-num">04</div>
+          <div>
+            <div class="phase-title">自分仕様に仕立て、毎日に組み込む。</div>
+            <div class="phase-subtitle">Living with Your Calendar</div>
+            <div class="phase-weeks">— WEEK 10 — 12 —</div>
+          </div>
+        </div>
+        <p class="phase-narrative">
+          仕組みが出来上がったら、いよいよ<em>「自分の言葉」で仕立て直す</em>3週間。汎用ラベルから、自分にしっくりくる呼び方へ。毎朝の確認動線を最小化して、3ヶ月の終わりには「翌3ヶ月分を、自分で延長できる」状態を目指します。卒業後も育てていける土台を、ここで整えます。
+        </p>
+        <div class="phase-highlights">
+          <div class="highlight">
+            <div class="highlight-label">WEEK 10</div>
+            <div class="highlight-text">AIと対話しながら自分専用のカテゴリラベルを作る</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 11</div>
+            <div class="highlight-text">朝の3分ルーチンを仕組みにする</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-label">WEEK 12</div>
+            <div class="highlight-text">卒業ワーク・翌3ヶ月分を自力で延長する</div>
+          </div>
+        </div>
+        <div class="phase-outcome">
+          <div class="phase-outcome-label">OUTCOME</div>
+          <div class="phase-outcome-text">「もう、誰かに頼まなくても、自分で続けていける」 ── そんな実感を持って卒業する。</div>
+        </div>
+      </div>
+
+      <!-- Gifts -->
+      <div class="curriculum-gifts">
+        <h3 class="gifts-title">受講中に手元に残るもの。</h3>
+        <div class="gifts-subtitle">— Templates & Materials —</div>
+        <ul class="gifts-list">
+          <li>スクショ付き質問テンプレート集</li>
+          <li>自分仕様の色マップシート</li>
+          <li>AIプロンプトテンプレート集</li>
+          <li>CSV取り込み用テンプレート</li>
+          <li>卒業時マニュアル（自分専用の運用書）</li>
+        </ul>
       </div>
     </div>
   </section>
