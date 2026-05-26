@@ -2465,35 +2465,33 @@
 
   reveals.forEach(el => io.observe(el));
 
-  // Show floating nav after scrolling past the hero
+  // Show floating nav after scrolling past the hero (scroll-based, reliable)
   const sidenav = document.getElementById('sidenav');
   const sidenavMobile = document.getElementById('sidenavMobile');
   const hero = document.querySelector('.hero');
-
-  const heroObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // When hero is mostly out of view, show the nav
-      const show = !entry.isIntersecting;
-      sidenav.classList.toggle('visible', show);
-      sidenavMobile.classList.toggle('visible', show);
-    });
-  }, { threshold: 0, rootMargin: '-120px 0px 0px 0px' });
-
-  if (hero) heroObserver.observe(hero);
-
-  // Smooth-close: hide nav again near the very bottom (footer) to avoid overlap
   const footer = document.querySelector('footer');
-  if (footer) {
-    const footerObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          sidenav.classList.remove('visible');
-          sidenavMobile.classList.remove('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-    footerObserver.observe(footer);
+
+  function updateNav() {
+    // Threshold: most of the hero scrolled away
+    const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+    const scrolled = window.scrollY || window.pageYOffset;
+    const pastHero = scrolled > (heroHeight * 0.6);
+
+    // Hide again when footer is in view (avoid overlap at the very bottom)
+    let nearFooter = false;
+    if (footer) {
+      const rect = footer.getBoundingClientRect();
+      nearFooter = rect.top < window.innerHeight - 60;
+    }
+
+    const show = pastHero && !nearFooter;
+    sidenav.classList.toggle('visible', show);
+    sidenavMobile.classList.toggle('visible', show);
   }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  window.addEventListener('resize', updateNav);
+  updateNav(); // run once on load
 </script>
 
 </body>
