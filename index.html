@@ -526,25 +526,50 @@
     padding-top: 24px;
     margin-bottom: 32px;
   }
+  .plan-list-label {
+    font-family: var(--latin);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--gold-soft);
+    margin: 4px 0 6px;
+    font-weight: 600;
+    display: block;
+  }
+  .plan-list-label.excluded {
+    color: var(--moon-mute);
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px dotted var(--line-dark-soft);
+  }
   .plan li {
     font-size: 16px;
     color: var(--moon);
-    padding: 12px 0;
+    padding: 11px 0;
     border-bottom: 1px dotted var(--line-dark-soft);
-    line-height: 1.8;
+    line-height: 1.7;
     position: relative;
-    padding-left: 22px;
+    padding-left: 26px;
   }
+  .plan li:last-child { border-bottom: none; }
   .plan li::before {
-    content: "✦";
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--gold-soft);
-    font-size: 11px;
-    top: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    top: 11px;
   }
-  .plan li.muted { color: rgba(184, 175, 146, 0.4); }
-  .plan li.muted::before { content: "—"; color: rgba(184, 175, 146, 0.35); }
+  .plan li.excluded {
+    color: var(--moon-mute);
+    opacity: 0.7;
+  }
+  .plan li.excluded::before {
+    content: "×";
+    color: var(--moon-mute);
+    font-size: 13px;
+    font-weight: 400;
+  }
 
   .plan-cta {
     display: inline-block;
@@ -986,6 +1011,217 @@
     color: var(--moon);
     line-height: 2.05;
   }
+  .community-feature {
+    max-width: 760px;
+    margin: 36px auto 0;
+    padding: 40px 40px 36px;
+    border: 1px solid var(--gold-soft);
+    background: linear-gradient(180deg, rgba(212,184,106,0.10), rgba(212,184,106,0.02));
+    text-align: center;
+  }
+  .community-label {
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold-soft);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .community-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 18px;
+    letter-spacing: 0.05em;
+  }
+  .community-text {
+    font-size: 16px;
+    color: var(--moon);
+    line-height: 2.1;
+    margin-bottom: 18px;
+    text-align: left;
+  }
+  .community-note {
+    font-size: 13px;
+    color: var(--moon-mute);
+    line-height: 1.9;
+    text-align: left;
+    padding-top: 16px;
+    border-top: 1px dotted var(--line-dark-soft);
+  }
+
+  /* ─── Value (why this program) ─── */
+  .value {
+    background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
+  }
+  .value-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .value-lead {
+    text-align: center;
+    font-size: 17px;
+    color: var(--text);
+    line-height: 2.2;
+    max-width: 760px;
+    margin: 0 auto 56px;
+    font-weight: 500;
+  }
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+  .value-card {
+    padding: 36px 32px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .value-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 40px;
+    color: var(--gold-deep);
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .value-card h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+  }
+  .value-card p {
+    font-size: 15px;
+    color: var(--text-mute);
+    line-height: 2.05;
+  }
+  .value-closing {
+    text-align: center;
+    font-size: 17px;
+    color: var(--text);
+    line-height: 2.3;
+    padding: 44px 40px;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    background: rgba(168,132,58,0.05);
+    font-weight: 500;
+  }
+  .value-closing em {
+    font-style: normal;
+    color: var(--burgundy);
+    font-weight: 700;
+    font-size: 19px;
+  }
+  @media (max-width: 880px) {
+    .value-grid { grid-template-columns: 1fr; gap: 18px; }
+    .value-closing { padding: 32px 24px; font-size: 16px; }
+  }
+
+  /* ─── Family (knowing how children use AI) ─── */
+  .family {
+    background: var(--ink-deep);
+    color: var(--moon);
+    position: relative;
+  }
+  .family .eyebrow { color: var(--gold-soft); }
+  .family h2.section-title { color: #ffffff; }
+  .family-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .family-stat {
+    margin-bottom: 56px;
+  }
+  .family-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .family-stat-item {
+    text-align: center;
+    padding: 32px 20px;
+    border: 1px solid var(--line-dark);
+    background: rgba(212,184,106,0.04);
+  }
+  .family-stat-item .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 56px;
+    color: var(--gold-soft);
+    line-height: 1;
+    font-weight: 500;
+  }
+  .family-stat-item .unit {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--gold-soft);
+    font-weight: 700;
+    margin-left: 2px;
+  }
+  .family-stat-item p {
+    font-size: 14px;
+    color: var(--moon);
+    line-height: 1.85;
+    margin-top: 16px;
+  }
+  .family-stat-source {
+    font-size: 12px;
+    color: var(--moon-mute);
+    line-height: 1.8;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  .family-body {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .family-body p {
+    font-size: 16px;
+    color: var(--moon);
+    line-height: 2.2;
+    margin-bottom: 24px;
+  }
+  .family-body p em {
+    font-style: normal;
+    color: var(--gold-soft);
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  .family-closing {
+    max-width: 720px;
+    margin: 50px auto 0;
+    text-align: center;
+    font-size: 18px;
+    color: var(--moon);
+    line-height: 2.1;
+    padding: 40px;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    background: radial-gradient(60% 100% at 50% 50%, rgba(212,184,106,0.10), transparent);
+  }
+  .family-closing strong {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 8px;
+  }
+  @media (max-width: 880px) {
+    .family-stat-row { grid-template-columns: 1fr; gap: 16px; }
+    .family-stat-item { padding: 28px 20px; }
+    .family-closing { padding: 32px 24px; font-size: 16px; }
+    .family-closing strong { font-size: 18px; }
+  }
 
   /* ─── Rules (light) ─── */
   .rules {
@@ -1049,59 +1285,46 @@
   .roadmap .eyebrow { color: var(--gold-soft); }
   .roadmap h2.section-title { color: #ffffff; }
   .roadmap .section-sub { color: var(--moon); }
-  .timeline {
-    max-width: 760px;
+  .solstice-mark {
+    max-width: 520px;
     margin: 0 auto;
+    text-align: center;
+    padding: 56px 40px;
+    border: 1px solid var(--gold-soft);
+    background: radial-gradient(70% 100% at 50% 50%, rgba(212,184,106,0.12), transparent);
     position: relative;
-    padding-left: 40px;
   }
-  .timeline::before {
-    content: "";
+  .solstice-mark::before,
+  .solstice-mark::after {
+    content: "✦";
     position: absolute;
-    left: 8px;
-    top: 12px;
-    bottom: 12px;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--gold-soft), var(--burgundy), transparent);
-  }
-  .step {
-    position: relative;
-    padding: 18px 0 36px;
-  }
-  .step::before {
-    content: "";
-    position: absolute;
-    left: -39px;
-    top: 24px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--ink-deep);
-    border: 2px solid var(--gold-soft);
-  }
-  .step.now::before {
-    background: var(--gold-soft);
-    box-shadow: 0 0 0 6px rgba(212,184,106,0.2);
-  }
-  .step-date {
-    font-family: var(--latin);
-    letter-spacing: 0.2em;
-    font-size: 12px;
     color: var(--gold-soft);
-    margin-bottom: 6px;
-    font-weight: 700;
-  }
-  .step-title {
-    font-size: 19px;
-    color: #ffffff;
-    font-weight: 700;
-    margin-bottom: 6px;
-    line-height: 1.7;
-  }
-  .step-body {
     font-size: 16px;
-    color: var(--moon);
-    line-height: 2;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .solstice-mark::before { left: 24px; }
+  .solstice-mark::after { right: 24px; }
+  .solstice-date {
+    font-family: var(--display);
+    font-size: clamp(38px, 6vw, 58px);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .solstice-label {
+    font-family: var(--latin);
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--gold-soft);
+    font-weight: 600;
+  }
+  @media (max-width: 880px) {
+    .solstice-mark { padding: 44px 28px; }
+    .solstice-mark::before { left: 16px; }
+    .solstice-mark::after { right: 16px; }
   }
 
   /* ─── Final CTA (dark) ─── */
@@ -1699,6 +1922,97 @@
     </div>
   </section>
 
+  <!-- ════ VALUE (why this matters) ════ -->
+  <section class="value">
+    <div class="wrap">
+      <div class="eyebrow">WHY THIS PROGRAM</div>
+      <span class="eyebrow-line"></span>
+      <h2 class="section-title">「作り方」だけなら、AIに聞けばわかる時代に。</h2>
+
+      <div class="value-inner">
+        <p class="value-lead">
+          正直にお伝えします。星読みカレンダーの「仕組み」そのものは、AIに尋ねれば、ある程度は自分で組み立てられる時代になりました。それでも、このプログラムをご用意した理由があります。
+        </p>
+
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-num">01</div>
+            <h3>迷わないための「道」がある</h3>
+            <p>ゼロから自分で調べると、何から手をつけるか、どこでつまずくかが見えません。12週間のステップは、その試行錯誤の時間を短くするための地図です。「自分で全部調べる時間」も立派なコストだからです。</p>
+          </div>
+          <div class="value-card">
+            <div class="value-num">02</div>
+            <h3>「組み合わせの発想」が価値になる</h3>
+            <p>AIの使い方はAIに聞けます。けれど「占星術 × カレンダー通知 × 毎日の生活動線」という組み合わせ方そのもの、そしてYokoの視点を通した意味づけは、検索やAIだけでは出てきません。</p>
+          </div>
+          <div class="value-card">
+            <div class="value-num">03</div>
+            <h3>変化に対応し続ける力が残る</h3>
+            <p>AIやGoogleの仕様は変わり続けます。一度きりの「完成品」ではなく、変わったときに自分で確認し、自分で直し、使い続けられる考え方。それが、3ヶ月を通して手元に残るいちばんの財産です。</p>
+          </div>
+          <div class="value-card">
+            <div class="value-num">04</div>
+            <h3>一人ではない、という安心</h3>
+            <p>同じテーマに取り組む仲間の存在、つまずきを分かち合える場所。黙々と一人で進めるのとは、続けやすさがまるで違います。これは、AIには決して代われない部分です。</p>
+          </div>
+        </div>
+
+        <div class="value-closing">
+          このプログラムの価値は、星読みカレンダーそのものだけではありません。<br>
+          <em>AIにどう尋ね、情報をどう整理し、変化にどう対応するか。</em><br>
+          これからの時代に必要な「自分で確認し、自分で直し、自分で使い続ける力」を、<br>
+          占星術という、あなたにとって身近で楽しいテーマを通して育てていく ── それが、この3ヶ月です。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FAMILY (knowing how children use AI) ════ -->
+  <section class="family">
+    <div class="wrap">
+      <div class="eyebrow">FOR YOUR FAMILY</div>
+      <span class="eyebrow-line"></span>
+      <h2 class="section-title">AIを知ることは、<br>子や孫を守ることにもつながる。</h2>
+
+      <div class="family-inner">
+        <div class="family-stat">
+          <div class="family-stat-row">
+            <div class="family-stat-item">
+              <span class="num">6</span><span class="unit">割超</span>
+              <p>小中学生が、すでに生成AIを使った経験がある</p>
+            </div>
+            <div class="family-stat-item">
+              <span class="num">6</span><span class="unit">割超</span>
+              <p>その保護者が「子どもがAIの回答を鵜呑みにしている」と感じている</p>
+            </div>
+            <div class="family-stat-item">
+              <span class="num">過半数</span>
+              <p>の家庭で、AI利用の家庭内ルールが「まだ無い」</p>
+            </div>
+          </div>
+          <p class="family-stat-source">出典：小中学生の生成AI利用に関する実態調査（2026年）。学年が上がるほど、AIは日常の情報収集ツールとして定着しています。</p>
+        </div>
+
+        <div class="family-body">
+          <p>
+            子どもや孫は、もう私たちが思うより自然にAIを使い始めています。けれど「どう使っているのか」「その答えを信じ込んでいないか」を、隣で見てあげられる大人は、まだ多くありません。
+          </p>
+          <p>
+            <em>「危ないから禁止」ではなく、「一緒に確かめられる」</em>。そのために必要なのは、難しい専門知識ではありません。自分自身がAIに触れ、「こう聞くと、こう返ってくる」「この答えは確かめた方がいい」という感覚を、身をもって知っておくことです。
+          </p>
+          <p>
+            このプログラムで星読みカレンダーを作る3ヶ月は、あなた自身がその感覚を育てる時間でもあります。AIとの付き合い方が自分の中に根づけば、いざという時、大切な子や孫に「それ、本当かどうか一緒に調べてみようか」と、隣で声をかけてあげられます。
+          </p>
+        </div>
+
+        <div class="family-closing">
+          自分のためだけじゃない。<br>
+          <strong>あなたがAIを知ることが、これからの世代を守る力になる。</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ════ PLANS ════ -->
   <section class="plans has-stars" id="plans">
     <div class="wrap">
@@ -1719,80 +2033,100 @@
       <div class="plan-grid">
         <!-- LUNA -->
         <div class="plan">
-          <div class="plan-tier-label">— FIRST COHORT —</div>
+          <div class="plan-tier-label">— SELF-PACED —</div>
           <span class="plan-symbol">☽</span>
           <div class="plan-name-jp">LUNA</div>
           <div class="plan-name-en">BASIC</div>
           <div class="plan-quota">3 名 限 定</div>
-          <div class="plan-original-price"><small>通常価格</small>¥98,000</div>
+          <div class="plan-original-price"><small>第2期以降の予定価格</small>¥98,000</div>
           <div class="plan-price">¥78,000</div>
           <div class="plan-tax">（税込・3ヶ月一括／第1期パートナー価格）</div>
           <p class="plan-description">
-            講義・アーカイブ・PDFを通して、ご自身のペースで学ぶプランです。質疑応答・添削・個別フィードバックは含まれません。ご自身で学びを進められる方、まずはAIやITへの苦手意識を少しずつ減らしたい方に向いています。
+            動画と資料を見ながら、ご自身のペースで進めるプランです。同じ講座に取り組む仲間とつながれる「自習室チャット」にも参加できます。自分で調べながら進めるのが好きな方、まずはAIやITへの苦手意識を少しずつ減らしたい方に向いています。
           </p>
+          <span class="plan-list-label">含まれるもの</span>
           <ul>
-            <li>動画講座 全コンテンツ視聴</li>
-            <li>テキスト・資料一式（PDF）</li>
+            <li>動画講座 全24本・全コンテンツ視聴</li>
+            <li>テキスト・テンプレート・資料一式</li>
+            <li>卒業時マニュアル（運用書）</li>
             <li>自分のペースで進行</li>
-            <li class="muted">質疑応答・添削</li>
-            <li class="muted">グループレッスン</li>
-            <li class="muted">個別コンサルティング</li>
+            <li>参加者専用「自習室チャット」への参加</li>
           </ul>
-          <a href="#final" class="plan-cta">このプランを選ぶ</a>
+          <span class="plan-list-label excluded">含まれないもの</span>
+          <ul>
+            <li class="excluded">Yokoからの質疑応答・添削</li>
+            <li class="excluded">グループレッスン（Zoom）</li>
+            <li class="excluded">個別コンサルティング</li>
+          </ul>
+          <a href="LUNA_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
         </div>
 
         <!-- JUPITER -->
         <div class="plan featured">
-          <div class="plan-tier-label">— FIRST COHORT —</div>
+          <div class="plan-tier-label">— 中心プラン・おすすめ —</div>
           <span class="plan-symbol">♃</span>
           <div class="plan-name-jp">JUPITER</div>
           <div class="plan-name-en">STANDARD</div>
           <div class="plan-quota">7 名 限 定</div>
-          <div class="plan-original-price"><small>通常価格</small>¥218,000</div>
+          <div class="plan-original-price"><small>第2期以降の予定価格</small>¥218,000</div>
           <div class="plan-price">¥178,000</div>
           <div class="plan-tax">（税込・3ヶ月一括／第1期パートナー価格）</div>
           <p class="plan-description">
-            今回の中心となる実践プランです。講義や資料を見るだけでなく、ご自身の発信・仕事・商品づくりに落とし込むための質問・実践・フィードバックを含みます。AIやITに苦手意識がある方、自分の場合はどう使えばいいか確認しながら進めたい方は、こちらをおすすめします。
+            このプログラムの中心プランです。動画や資料で学ぶだけでなく、迷った時にYokoに質問でき、実践へのフィードバックを受けながら進められます。「自分の場合はどうすれば？」を確認しながら、伴走してもらいたい方へ。
           </p>
+          <span class="plan-list-label">含まれるもの</span>
           <ul>
-            <li>動画講座 全コンテンツ視聴</li>
-            <li>テキスト・資料一式（PDF）</li>
+            <li>LUNAのすべての内容</li>
             <li>月1回 グループレッスン（Zoom）</li>
             <li>質問対応・カスタマイズ相談</li>
-            <li>実践フィードバック</li>
-            <li class="muted">個別コンサルティング</li>
+            <li>実践へのフィードバック</li>
+            <li>仕様変更時のトラブル相談</li>
           </ul>
-          <a href="#final" class="plan-cta">このプランを選ぶ</a>
+          <span class="plan-list-label excluded">含まれないもの</span>
+          <ul>
+            <li class="excluded">1対1の個別コンサルティング</li>
+          </ul>
+          <a href="JUPITER_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
         </div>
 
         <!-- SUN -->
         <div class="plan">
-          <div class="plan-tier-label">— PRIVATE GUIDANCE —</div>
+          <div class="plan-tier-label">— 個別戦略コンサル —</div>
           <span class="plan-symbol">☉</span>
           <div class="plan-name-jp">SUN</div>
           <div class="plan-name-en">PERSONAL</div>
           <div class="plan-quota">1 名 限 定</div>
           <div class="plan-price">¥498,000</div>
-          <div class="plan-tax">（税込・3ヶ月一括／通常価格）</div>
+          <div class="plan-tax">（税込・3ヶ月一括）</div>
           <p class="plan-description">
-            第1期で1名様のみの完全個別伴走プランです。3ヶ月間で、ご自身の発信・商品設計・AI活用・今後の動き方を個別に整理していきます。個別セッションや事前ワークを含むため、一定の時間を確保して深く取り組みたい方に向いています。
+            星読みカレンダーづくりを入口に、Yokoが1対1で伴走する個別戦略プランです。カレンダー構築にとどまらず、ホロスコープを深く読み解きながら、発信・商品設計・今後の動き方まで一緒に整えていきます。第1期は1名様限定です。
           </p>
+          <span class="plan-list-label">含まれるもの</span>
           <ul>
-            <li>動画講座 全コンテンツ視聴</li>
-            <li>テキスト・資料一式（PDF）</li>
-            <li>月1回 グループレッスン（Zoom）</li>
-            <li>個別コンサルティング</li>
+            <li>JUPITERのすべての内容</li>
+            <li>1対1の個別コンサルティング</li>
             <li>ホロスコープ詳細読み・戦略立案</li>
             <li>事前ワーク付き個別セッション</li>
+            <li>発信・事業活用までの個別設計</li>
           </ul>
-          <a href="#final" class="plan-cta">このプランを選ぶ</a>
+          <a href="SUN_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
         </div>
       </div>
 
       <div class="plans-note">
-        <strong style="color:var(--paper);letter-spacing:0.08em;">※ 第1期パートナー価格について</strong><br>
-        LUNA・JUPITERプランは、第1期パートナー価格でのご案内です。第2期以降は通常価格でのご案内を予定しています。<br>
-        SUNプランは完全個別伴走のため、第1期も通常価格でのご案内となります。
+        <strong style="color:#ffffff;letter-spacing:0.08em;">第1期パートナー価格について</strong><br>
+        第1期は、講座内容を一緒に育てていただく「初期パートナー」としてご参加いただきます。完成された教材を一方的に受け取るのではなく、実際につまずく箇所や必要な補足を一緒に確認しながら、今後の講座の土台づくりにもご協力いただく前提で、第2期以降の予定価格より抑えた価格でご案内しています。SUNプランは個別伴走のため、パートナー価格の対象外です。
+      </div>
+
+      <div class="community-feature">
+        <div class="community-label">★ 3コース共通特典</div>
+        <h3 class="community-title">参加者専用「自習室チャット」</h3>
+        <p class="community-text">
+          すべてのプランの方に、参加者同士で進捗や気づきを共有できる専用チャットへの参加権をお付けします。「今日はここまで進めました」「AIへの聞き方をこう変えたら、わかりやすくなりました」── そんな小さな工夫や進捗を、同じ講座に取り組む仲間と分かち合える場所です。一人で黙々と進めるのが不安な方も、仲間の存在を感じながら進めていけます。
+        </p>
+        <p class="community-note">
+          ※ こちらは参加者同士の交流・共有を目的とした場であり、Yokoからの個別回答・添削・質問対応を保証するものではありません。正式な質問対応・実践フィードバックは、JUPITER以上のプランに含まれます。
+        </p>
       </div>
     </div>
   </section>
@@ -1871,22 +2205,9 @@
         新しい光の流れに乗って、3ヶ月後のあなたへ。
       </p>
 
-      <div class="timeline">
-        <div class="step now">
-          <div class="step-date">MAY (LATE)</div>
-          <div class="step-title">5月末 ── 現行サロン終了の告知</div>
-          <p class="step-body">これまでのコミュニティから、新しいプログラムへ。区切りのご案内をいたします。</p>
-        </div>
-        <div class="step">
-          <div class="step-date">JUNE (EARLY)</div>
-          <div class="step-title">6月初旬 ── YouTubeでティザー公開</div>
-          <p class="step-body">プログラムの輪郭を、動画で先行公開。優先案内のご登録を受付けます。</p>
-        </div>
-        <div class="step">
-          <div class="step-date">JUNE 21 — SUMMER SOLSTICE</div>
-          <div class="step-title">6月21日（夏至）── 販売開始・全貌公開</div>
-          <p class="step-body">YouTubeでの全貌公開と同時に、3プランの受付を開始。早期特典あり。</p>
-        </div>
+      <div class="solstice-mark">
+        <div class="solstice-date">2026 . 06 . 21</div>
+        <div class="solstice-label">SUMMER SOLSTICE — 夏至</div>
       </div>
     </div>
   </section>
@@ -1906,7 +2227,7 @@
       無理なくつなげていく時間です。<br><br>
       夏至の朝から、あなたの毎日に寄り添う新しい仕組みを、一緒に整えていきましょう。
     </p>
-    <a href="#" class="final-cta">優先案内に登録する</a>
+    <a href="申し込みページのYOORリンクをここに" class="final-cta">お申し込みはこちら</a>
     <div class="final-date">— 2026.06.21 Summer Solstice —</div>
   </section>
 
@@ -1917,8 +2238,20 @@
       <ol>
         <li><strong style="color:var(--paper)">プログラムの内容について。</strong>本プログラムは、星読みカレンダーの構築方法、AIツールの活用方法、Googleカレンダー等の設定手順を学ぶための講座です。スキルの習得度、活用範囲、完成までの進行には、受講者様の環境・経験・取り組み状況により個人差があります。</li>
         <li><strong style="color:var(--paper)">占星術的な情報の扱いについて。</strong>本プログラムで扱う占星術的な情報は、日々の行動を考えるための参考情報であり、特定の成果、成功、問題回避を保証するものではありません。最終的な判断や行動は、ご自身の状況に合わせて行っていただくものとなります。</li>
-        <li><strong style="color:var(--paper)">外部ツールの仕様変更について。</strong>Google・AIツール各社のアップデートにより、画面表示や操作手順が変更される場合があります。本プログラムでは、特定の操作だけでなく、変化に対応しやすい考え方もあわせてお伝えします。</li>
+        <li><strong style="color:var(--paper)">外部ツール・AIの仕様について。</strong>Google・AIツール各社のアップデートにより、画面表示や操作手順が変更される場合があります。また、AIの回答精度は保証されるものではありません。本プログラムでは、特定の操作だけでなく、変化に対応しやすい考え方もあわせてお伝えします。一部の外部ツールは、より快適にご利用いただくために有料プランが必要となる場合があります。</li>
         <li><strong style="color:var(--paper)">代行業務について。</strong>セキュリティ保護の観点から、パスワードのお預かりや設定代行は行っておりません。ご自身の大切なアカウントを守りながら進められるよう、手順を確認しながら取り組んでいただく形となります。</li>
+        <li><strong style="color:var(--paper)">自習室チャットについて。</strong>参加者専用チャットは、参加者同士の交流・進捗共有を目的とした場です。Yokoからの個別回答・添削・質問対応を保証するものではなく、正式な質問対応・実践フィードバックはJUPITER以上のプランに含まれます。</li>
+      </ol>
+
+      <h3 style="margin-top:56px;">受講にあたって ／ 取引条件</h3>
+      <p style="font-size:14px;color:var(--moon);line-height:2;text-align:center;max-width:680px;margin:0 auto 28px;">
+        お申し込みの前に、以下の条件をご確認ください。詳細はお申し込みページにも明記いたします。
+      </p>
+      <ol>
+        <li><strong style="color:var(--paper)">提供期間・視聴期限。</strong>講座は3ヶ月間のプログラムです。動画コンテンツの視聴期限、開始日・終了日は、お申し込みページおよび受講案内にてご確認いただけます。</li>
+        <li><strong style="color:var(--paper)">サポート範囲。</strong>JUPITER・SUNプランの質問対応・フィードバックの範囲、グループレッスン（Zoom）の開催日時および欠席時の取り扱いは、受講案内にて明示いたします。</li>
+        <li><strong style="color:var(--paper)">お支払い・解約・返金。</strong>販売価格・お支払い方法・お支払い時期、ならびに途中解約・返金に関する取り扱いは、特定商取引法に基づき、お申し込みページに記載いたします。デジタルコンテンツの性質上、返金の可否には条件が設けられる場合があります。</li>
+        <li><strong style="color:var(--paper)">事業者情報。</strong>事業者の名称・所在地・連絡先等の表示は、特定商取引法に基づきお申し込みページに記載いたします。</li>
       </ol>
     </div>
   </section>
@@ -1933,7 +2266,7 @@
 
 <script>
   // Subtle reveal on scroll
-  const reveals = document.querySelectorAll('section .wrap > *, .timeline .step, .rule-item, .plan, .witty-card, .pillar, .worry-card');
+  const reveals = document.querySelectorAll('section .wrap > *, .rule-item, .plan, .witty-card, .pillar, .worry-card');
   reveals.forEach(el => el.classList.add('reveal'));
 
   const io = new IntersectionObserver((entries) => {
