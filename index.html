@@ -2466,32 +2466,32 @@
   reveals.forEach(el => io.observe(el));
 
   // Show floating nav after scrolling past the hero (scroll-based, reliable)
-  const sidenav = document.getElementById('sidenav');
-  const sidenavMobile = document.getElementById('sidenavMobile');
-  const hero = document.querySelector('.hero');
-  const footer = document.querySelector('footer');
+  (function () {
+    const sidenav = document.getElementById('sidenav');
+    const sidenavMobile = document.getElementById('sidenavMobile');
+    const hero = document.querySelector('.hero');
+    const footer = document.querySelector('footer');
 
-  function updateNav() {
-    // Threshold: most of the hero scrolled away
-    const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
-    const scrolled = window.scrollY || window.pageYOffset;
-    const pastHero = scrolled > (heroHeight * 0.6);
+    function updateNav() {
+      const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+      const scrolled = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      const pastHero = scrolled > (heroHeight * 0.5);
 
-    // Hide again when footer is in view (avoid overlap at the very bottom)
-    let nearFooter = false;
-    if (footer) {
-      const rect = footer.getBoundingClientRect();
-      nearFooter = rect.top < window.innerHeight - 60;
+      let nearFooter = false;
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        nearFooter = rect.top < window.innerHeight - 60;
+      }
+
+      const show = pastHero && !nearFooter;
+      if (sidenav) sidenav.classList.toggle('visible', show);
+      if (sidenavMobile) sidenavMobile.classList.toggle('visible', show);
     }
 
-    const show = pastHero && !nearFooter;
-    sidenav.classList.toggle('visible', show);
-    sidenavMobile.classList.toggle('visible', show);
-  }
-
-  window.addEventListener('scroll', updateNav, { passive: true });
-  window.addEventListener('resize', updateNav);
-  updateNav(); // run once on load
+    window.addEventListener('scroll', updateNav, { passive: true });
+    window.addEventListener('resize', updateNav);
+    updateNav();
+  })();
 </script>
 
 </body>
