@@ -50,6 +50,131 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 20px; }
+
+  /* ─── Floating side navigation ─── */
+  .sidenav {
+    position: fixed;
+    right: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 20px;
+    background: rgba(14, 18, 36, 0.82);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line-dark);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  .sidenav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  .sidenav a {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--moon-mute);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    padding: 7px 0 7px 18px;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+  .sidenav a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 1px;
+    background: var(--gold-deep);
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+  .sidenav a:hover {
+    color: var(--gold-soft);
+  }
+  .sidenav a:hover::before {
+    width: 12px;
+    background: var(--gold-soft);
+  }
+  .sidenav a.cta {
+    margin-top: 8px;
+    padding: 10px 16px;
+    background: var(--gold-soft);
+    color: var(--ink-deep);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.12em;
+  }
+  .sidenav a.cta::before { display: none; }
+  .sidenav a.cta:hover {
+    background: #f0d488;
+    color: var(--ink-deep);
+  }
+
+  /* Mobile: bottom bar */
+  .sidenav-mobile {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 50;
+    display: none;
+    background: rgba(14, 18, 36, 0.94);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--gold-deep);
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .sidenav-mobile.visible { transform: translateY(0); }
+  .sidenav-mobile-inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .sidenav-mobile .scroll-links {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .sidenav-mobile .scroll-links::-webkit-scrollbar { display: none; }
+  .sidenav-mobile .scroll-links a {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--moon);
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid var(--line-dark);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .sidenav-mobile .cta {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--ink-deep);
+    background: var(--gold-soft);
+    text-decoration: none;
+    padding: 11px 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.08em;
+  }
+  @media (max-width: 880px) {
+    .sidenav { display: none; }
+    .sidenav-mobile { display: block; }
+  }
 
   body {
     font-family: var(--serif);
@@ -1180,6 +1305,34 @@
     text-align: center;
     letter-spacing: 0.03em;
   }
+  .family-proverb {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .family-proverb .jp {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.2vw, 32px);
+    font-weight: 700;
+    color: var(--gold-soft);
+    letter-spacing: 0.12em;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .family-proverb .reading {
+    font-size: 13px;
+    color: var(--moon-mute);
+    letter-spacing: 0.18em;
+    margin-bottom: 18px;
+  }
+  .family-proverb .meaning {
+    font-size: 15px;
+    color: var(--moon);
+    line-height: 2;
+  }
   .family-body {
     max-width: 720px;
     margin: 0 auto;
@@ -1476,6 +1629,29 @@
   <a href="#plans" class="topbar-cta">プランを見る →</a>
 </header>
 
+<!-- ════ FLOATING NAV ════ -->
+<nav class="sidenav" id="sidenav" aria-label="セクションナビゲーション">
+  <a href="#worry">よくある不安</a>
+  <a href="#journey">3ヶ月の歩み</a>
+  <a href="#curriculum">カリキュラム</a>
+  <a href="#value">この講座について</a>
+  <a href="#plans">プラン・料金</a>
+  <a href="#plans" class="cta">お申し込み</a>
+</nav>
+
+<nav class="sidenav-mobile" id="sidenavMobile" aria-label="セクションナビゲーション">
+  <div class="sidenav-mobile-inner">
+    <div class="scroll-links">
+      <a href="#worry">不安</a>
+      <a href="#journey">歩み</a>
+      <a href="#curriculum">カリキュラム</a>
+      <a href="#value">講座について</a>
+      <a href="#plans">料金</a>
+    </div>
+    <a href="#plans" class="cta">お申し込み</a>
+  </div>
+</nav>
+
 <main>
 
   <!-- ════ HERO ════ -->
@@ -1507,7 +1683,7 @@
   </section>
 
   <!-- ════ WORRY (paper) ════ -->
-  <section class="worry">
+  <section class="worry" id="worry">
     <div class="wrap">
       <div class="eyebrow">VOICES</div>
       <span class="eyebrow-line"></span>
@@ -1745,7 +1921,7 @@
   </section>
 
   <!-- ════ CURRICULUM ════ -->
-  <section class="curriculum">
+  <section class="curriculum" id="curriculum">
     <div class="wrap">
       <div class="eyebrow">CURRICULUM</div>
       <span class="eyebrow-line"></span>
@@ -1923,7 +2099,7 @@
   </section>
 
   <!-- ════ VALUE (why this matters) ════ -->
-  <section class="value">
+  <section class="value" id="value">
     <div class="wrap">
       <div class="eyebrow">WHY THIS PROGRAM</div>
       <span class="eyebrow-line"></span>
@@ -1993,12 +2169,21 @@
           <p class="family-stat-source">出典：小中学生の生成AI利用に関する実態調査（2026年）。学年が上がるほど、AIは日常の情報収集ツールとして定着しています。</p>
         </div>
 
+        <div class="family-proverb">
+          <div class="jp">蛇の道は、蛇。</div>
+          <div class="reading">— じゃのみちは、へび —</div>
+          <p class="meaning">
+            同じ道を知る者には、同じ道を行く者のことがよくわかる。<br>
+            AIのことを一番わかってあげられるのは、AIに触れたことのある人です。
+          </p>
+        </div>
+
         <div class="family-body">
           <p>
             子どもや孫は、もう私たちが思うより自然にAIを使い始めています。けれど「どう使っているのか」「その答えを信じ込んでいないか」を、隣で見てあげられる大人は、まだ多くありません。
           </p>
           <p>
-            <em>「危ないから禁止」ではなく、「一緒に確かめられる」</em>。そのために必要なのは、難しい専門知識ではありません。自分自身がAIに触れ、「こう聞くと、こう返ってくる」「この答えは確かめた方がいい」という感覚を、身をもって知っておくことです。
+            <em>「危ないから禁止」ではなく、「一緒に確かめられる」</em>。そのために必要なのは、難しい専門知識ではありません。遠ざけて怖がるのではなく、自分自身が一度その世界に触れてみること。「こう聞くと、こう返ってくる」「この答えは確かめた方がいい」という感覚を、身をもって知っておくことです。
           </p>
           <p>
             このプログラムで星読みカレンダーを作る3ヶ月は、あなた自身がその感覚を育てる時間でもあります。AIとの付き合い方が自分の中に根づけば、いざという時、大切な子や孫に「それ、本当かどうか一緒に調べてみようか」と、隣で声をかけてあげられます。
@@ -2279,6 +2464,36 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
   reveals.forEach(el => io.observe(el));
+
+  // Show floating nav after scrolling past the hero
+  const sidenav = document.getElementById('sidenav');
+  const sidenavMobile = document.getElementById('sidenavMobile');
+  const hero = document.querySelector('.hero');
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // When hero is mostly out of view, show the nav
+      const show = !entry.isIntersecting;
+      sidenav.classList.toggle('visible', show);
+      sidenavMobile.classList.toggle('visible', show);
+    });
+  }, { threshold: 0, rootMargin: '-120px 0px 0px 0px' });
+
+  if (hero) heroObserver.observe(hero);
+
+  // Smooth-close: hide nav again near the very bottom (footer) to avoid overlap
+  const footer = document.querySelector('footer');
+  if (footer) {
+    const footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sidenav.classList.remove('visible');
+          sidenavMobile.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    footerObserver.observe(footer);
+  }
 </script>
 
 </body>
