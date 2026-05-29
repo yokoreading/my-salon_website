@@ -1245,6 +1245,282 @@
     font-weight: 700;
     font-size: 19px;
   }
+  .ai-truth {
+    max-width: 860px;
+    margin: 64px auto 0;
+    padding: 48px 44px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+  }
+  .ai-truth-label {
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .ai-truth-title {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.6vw, 26px);
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    letter-spacing: 0.03em;
+  }
+  .ai-truth-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+  .ai-truth-col {
+    padding: 26px 24px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--gold);
+  }
+  .ai-truth-col .who {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--burgundy);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  .ai-truth-col p {
+    font-size: 15px;
+    color: var(--text-mute);
+    line-height: 2.05;
+  }
+  .ai-truth-body {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 2.2;
+    text-align: center;
+    font-weight: 500;
+  }
+  .ai-truth-body em {
+    font-style: normal;
+    color: var(--burgundy);
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  @media (max-width: 880px) {
+    .ai-truth { padding: 36px 26px; }
+    .ai-truth-cols { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  /* ─── AI tools block ─── */
+  .ai-tools {
+    max-width: 860px;
+    margin: 36px auto 0;
+    padding: 40px 44px;
+    background: var(--paper-warm);
+    border-left: 3px solid var(--gold);
+  }
+  .ai-tools-label {
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold-deep);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .ai-tools-title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+  .ai-tools p {
+    font-size: 15px;
+    color: var(--text-mute);
+    line-height: 2.1;
+    margin-bottom: 16px;
+  }
+  .ai-tools p:last-of-type { margin-bottom: 0; }
+  .ai-tools p em {
+    font-style: normal;
+    color: var(--burgundy);
+    font-weight: 700;
+  }
+  .ai-faq {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px dotted var(--gold);
+  }
+  .ai-faq summary {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold-deep);
+    cursor: pointer;
+    padding: 6px 0 6px 24px;
+    position: relative;
+    line-height: 1.7;
+    list-style: none;
+    user-select: none;
+  }
+  .ai-faq summary::-webkit-details-marker { display: none; }
+  .ai-faq summary::before {
+    content: "Q";
+    position: absolute;
+    left: 0; top: 6px;
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .ai-faq summary::after {
+    content: "+";
+    margin-left: 8px;
+    color: var(--gold);
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .ai-faq[open] summary::after { content: "−"; }
+  .ai-faq-answer {
+    padding: 14px 0 4px 24px;
+    font-size: 14px;
+    color: var(--text-mute);
+    line-height: 2;
+    position: relative;
+  }
+  .ai-faq-answer::before {
+    content: "A";
+    position: absolute;
+    left: 0; top: 14px;
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--burgundy);
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  /* ─── Accordion: worry-card answers (light bg) ─── */
+  .worry-toggle {
+    margin-top: 10px;
+  }
+  .worry-toggle summary {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--gold-deep);
+    cursor: pointer;
+    padding: 8px 0;
+    list-style: none;
+    user-select: none;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .worry-toggle summary::-webkit-details-marker { display: none; }
+  .worry-toggle summary::after {
+    content: "+";
+    color: var(--gold);
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .worry-toggle[open] summary::after { content: "−"; }
+  .worry-toggle summary:hover { color: var(--burgundy); }
+
+  /* ─── Accordion: plan details (dark bg) ─── */
+  .plan-toggle {
+    margin: 6px 0 28px;
+  }
+  .plan-toggle summary {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--gold-soft);
+    cursor: pointer;
+    padding: 12px 16px;
+    list-style: none;
+    user-select: none;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    border: 1px solid var(--line-dark);
+    text-align: center;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  .plan-toggle summary::-webkit-details-marker { display: none; }
+  .plan-toggle summary::after {
+    content: " +";
+    color: var(--gold-soft);
+    font-weight: 400;
+  }
+  .plan-toggle[open] summary::after { content: " −"; }
+  .plan-toggle summary:hover {
+    border-color: var(--gold-soft);
+    color: #ffffff;
+  }
+  .plan-toggle[open] summary {
+    border-color: var(--gold-soft);
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  .plan-toggle-body { padding-top: 12px; }
+
+  /* ─── Accordion: legal items (dark bg) ─── */
+  .legal-list {
+    list-style: none;
+    counter-reset: leg;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .legal-item {
+    counter-increment: leg;
+    border-bottom: 1px dotted var(--line-dark-soft);
+  }
+  .legal-item summary {
+    padding: 18px 0 18px 48px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    position: relative;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+  .legal-item summary::-webkit-details-marker { display: none; }
+  .legal-item summary::before {
+    content: counter(leg, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 18px;
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .legal-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 4px; top: 18px;
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .legal-item[open] summary::after { content: "−"; }
+  .legal-item summary:hover { color: var(--gold-soft); }
+  .legal-body {
+    padding: 0 0 22px 48px;
+    color: var(--moon);
+    font-size: 14px;
+    line-height: 2.05;
+  }
+  @media (max-width: 880px) {
+    .ai-tools { padding: 30px 26px; }
+  }
   @media (max-width: 880px) {
     .value-grid { grid-template-columns: 1fr; gap: 18px; }
     .value-closing { padding: 32px 24px; font-size: 16px; }
@@ -1702,22 +1978,34 @@
         <div class="worry-card">
           <span class="worry-num">i.</span>
           <p class="worry-q">毎日、占いサイトを見に行くのが面倒。</p>
-          <p class="worry-a">カレンダーが <span>「通知」</span> で教えてくれます。新しいアプリを開く必要も、ブックマークを探す必要もありません。専属秘書が、いつもの画面に佇んでいる感覚です。</p>
+          <details class="worry-toggle">
+            <summary>答えを読む</summary>
+            <p class="worry-a">カレンダーが <span>「通知」</span> で教えてくれます。新しいアプリを開く必要も、ブックマークを探す必要もありません。専属秘書が、いつもの画面に佇んでいる感覚です。</p>
+          </details>
         </div>
         <div class="worry-card">
           <span class="worry-num">ii.</span>
           <p class="worry-q">IT設定を業者に頼むのは、正直、怖い。</p>
-          <p class="worry-a">大切なパスワードやアカウント情報は、<span>できるだけご自身で守れる形</span>が安心です。このプログラムでは、ひとつずつ手順を確認しながら、あなた自身の手で仕組みを整えていきます。「わからないまま任せる」のではなく、「理解して使える安心感」を育てていきます。</p>
+          <details class="worry-toggle">
+            <summary>答えを読む</summary>
+            <p class="worry-a">大切なパスワードやアカウント情報は、<span>できるだけご自身で守れる形</span>が安心です。このプログラムでは、ひとつずつ手順を確認しながら、あなた自身の手で仕組みを整えていきます。「わからないまま任せる」のではなく、「理解して使える安心感」を育てていきます。</p>
+          </details>
         </div>
         <div class="worry-card">
           <span class="worry-num">iii.</span>
           <p class="worry-q">そもそも、AI占いって胡散臭くない？</p>
-          <p class="worry-a">このプログラムで扱うのは、気分や思いつきの占いではなく、<span>天体の動きという客観的なデータ</span>です。AIは、その情報を日常で使いやすい形に整理するサポート役。占いをふわっと受け取るだけでなく、「今日はどう動くとよさそうか」を現実的に確認できる仕組みを作ります。</p>
+          <details class="worry-toggle">
+            <summary>答えを読む</summary>
+            <p class="worry-a">このプログラムで扱うのは、気分や思いつきの占いではなく、<span>天体の動きという客観的なデータ</span>です。AIは、その情報を日常で使いやすい形に整理するサポート役。占いをふわっと受け取るだけでなく、「今日はどう動くとよさそうか」を現実的に確認できる仕組みを作ります。</p>
+          </details>
         </div>
         <div class="worry-card">
           <span class="worry-num">iv.</span>
           <p class="worry-q">PCを買い替えたら、使えなくなりそう。</p>
-          <p class="worry-a">仕組みごと身につけていくので、<span>環境が変わっても再構築しやすい</span>のが本プログラムの特徴です。一度の鑑定で終わらない、長く活用しやすい考え方として手元に残していきます。</p>
+          <details class="worry-toggle">
+            <summary>答えを読む</summary>
+            <p class="worry-a">仕組みごと身につけていくので、<span>環境が変わっても再構築しやすい</span>のが本プログラムの特徴です。一度の鑑定で終わらない、長く活用しやすい考え方として手元に残していきます。</p>
+          </details>
         </div>
       </div>
     </div>
@@ -2139,6 +2427,57 @@
           これからの時代に必要な「自分で確認し、自分で直し、自分で使い続ける力」を、<br>
           占星術という、あなたにとって身近で楽しいテーマを通して育てていく ── それが、この3ヶ月です。
         </div>
+
+        <div class="ai-truth">
+          <div class="ai-truth-label">ABOUT AI</div>
+          <div class="ai-truth-title">AIは、ときどき間違えます。<br>それでも、大丈夫です。</div>
+
+          <div class="ai-truth-cols">
+            <div class="ai-truth-col">
+              <div class="who">「AIなんて、信用できない」と感じている方へ</div>
+              <p>その慎重さは、とても大切な感覚です。AIは、もっともらしい顔をして事実と違うことを答えることがあります。だからこそ「鵜呑みにせず、確かめる」という姿勢ごと、このプログラムで身につけていきます。疑える人は、AIを安全に使える人です。</p>
+            </div>
+            <div class="ai-truth-col">
+              <div class="who">「AIの言うことは正しい」と思っている方へ</div>
+              <p>便利なAIですが、その回答が常に正しいとは限りません。人間と同じで、勘違いもすれば、こちらの意図を取り違えることもあります。「本当かな？」と一度立ち止まる習慣を、無理なく持てるようになることを目指します。</p>
+            </div>
+          </div>
+
+          <p class="ai-truth-body">
+            思った答えが返ってこないのは、あなたのせいでも、AIの故障でもありません。<br>
+            人と人との会話で「言いたいことが伝わらない」ことがあるのと、同じです。<br>
+            <em>聞き方を少し変える、前提を添える、確かめる。</em><br>
+            その小さなコツを、3ヶ月かけて一緒に練習していきます。
+          </p>
+        </div>
+
+        <div class="ai-tools">
+          <div class="ai-tools-label">ABOUT AI TOOLS</div>
+          <h3 class="ai-tools-title">使うAIツールについて。</h3>
+          <p>
+            ご利用になるAIは、自由にお選びいただけます。ただし本プログラムは、星のデータを正確に扱い、Googleカレンダーと連携して動かすことが前提です。
+          </p>
+          <p>
+            無料プランでも始めることはできますが、機能や回数の制限にぶつかりやすく、「使えるようにする」こと自体に時間を取られてしまうことが少なくありません。<em>学びの時間を、設定の試行錯誤ではなく、本来の星読みと仕組みづくりに使っていただくため</em>、安定した有料プランをおすすめしています。
+          </p>
+          <p>
+            なお、本プログラムは <strong style="color:var(--text)">Claude（Pro以上）</strong> での動作を確認済みで、教材もこちらを基準にご案内します。初めての方は、まずこちらからのスタートが安心です。
+          </p>
+
+          <details class="ai-faq">
+            <summary>無料のAIではダメですか？</summary>
+            <div class="ai-faq-answer">
+              始めるだけなら可能です。ただ、無料プランでは途中で機能や回数の制限が出てくることが多く、そこで止まって時間を溶かしてしまいがちです。最初から有料のほうが、結局いちばん早く先に進めます。
+            </div>
+          </details>
+
+          <details class="ai-faq">
+            <summary>具体的に、どのAIを選べばいいですか？</summary>
+            <div class="ai-faq-answer">
+              本プログラムは Claude（Pro以上）を基準に作っています。教材の画面や手順がそのまま再現できるので、特にこだわりがなければこちらが安心です。Gemini Advanced など、Googleカレンダーへの書き込みに対応した他の有料AIでも基本の手順は同じですが、画面や挙動の細部が異なります。詳しいツール選びについては、講座内でもご案内します。
+            </div>
+          </details>
+        </div>
       </div>
     </div>
   </section>
@@ -2229,20 +2568,25 @@
           <p class="plan-description">
             動画と資料を見ながら、ご自身のペースで進めるプランです。同じ講座に取り組む仲間とつながれる「自習室チャット」にも参加できます。自分で調べながら進めるのが好きな方、まずはAIやITへの苦手意識を少しずつ減らしたい方に向いています。
           </p>
-          <span class="plan-list-label">含まれるもの</span>
-          <ul>
-            <li>動画講座 全24本・全コンテンツ視聴</li>
-            <li>テキスト・テンプレート・資料一式</li>
-            <li>卒業時マニュアル（運用書）</li>
-            <li>自分のペースで進行</li>
-            <li>参加者専用「自習室チャット」への参加</li>
-          </ul>
-          <span class="plan-list-label excluded">含まれないもの</span>
-          <ul>
-            <li class="excluded">Yokoからの質疑応答・添削</li>
-            <li class="excluded">グループレッスン（Zoom）</li>
-            <li class="excluded">個別コンサルティング</li>
-          </ul>
+          <details class="plan-toggle">
+            <summary>サービス内容を見る</summary>
+            <div class="plan-toggle-body">
+              <span class="plan-list-label">含まれるもの</span>
+              <ul>
+                <li>動画講座 全24本・全コンテンツ視聴</li>
+                <li>テキスト・テンプレート・資料一式</li>
+                <li>卒業時マニュアル（運用書）</li>
+                <li>自分のペースで進行</li>
+                <li>参加者専用「自習室チャット」への参加</li>
+              </ul>
+              <span class="plan-list-label excluded">含まれないもの</span>
+              <ul>
+                <li class="excluded">Yokoからの質疑応答・添削</li>
+                <li class="excluded">グループレッスン（Zoom）</li>
+                <li class="excluded">個別コンサルティング</li>
+              </ul>
+            </div>
+          </details>
           <a href="LUNA_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
         </div>
 
@@ -2259,18 +2603,23 @@
           <p class="plan-description">
             このプログラムの中心プランです。動画や資料で学ぶだけでなく、迷った時にYokoに質問でき、実践へのフィードバックを受けながら進められます。「自分の場合はどうすれば？」を確認しながら、伴走してもらいたい方へ。
           </p>
-          <span class="plan-list-label">含まれるもの</span>
-          <ul>
-            <li>LUNAのすべての内容</li>
-            <li>月1回 グループレッスン（Zoom）</li>
-            <li>質問対応・カスタマイズ相談</li>
-            <li>実践へのフィードバック</li>
-            <li>仕様変更時のトラブル相談</li>
-          </ul>
-          <span class="plan-list-label excluded">含まれないもの</span>
-          <ul>
-            <li class="excluded">1対1の個別コンサルティング</li>
-          </ul>
+          <details class="plan-toggle">
+            <summary>サービス内容を見る</summary>
+            <div class="plan-toggle-body">
+              <span class="plan-list-label">含まれるもの</span>
+              <ul>
+                <li>LUNAのすべての内容</li>
+                <li>月1回 グループレッスン（Zoom）</li>
+                <li>質問対応・カスタマイズ相談</li>
+                <li>実践へのフィードバック</li>
+                <li>仕様変更時のトラブル相談</li>
+              </ul>
+              <span class="plan-list-label excluded">含まれないもの</span>
+              <ul>
+                <li class="excluded">1対1の個別コンサルティング</li>
+              </ul>
+            </div>
+          </details>
           <a href="JUPITER_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
         </div>
 
@@ -2286,12 +2635,17 @@
           <p class="plan-description">
             星読みカレンダーづくりを入口に、Yokoが1対1で伴走する個別プランです。あなたのホロスコープを丁寧に読み解き、それをカレンダー設計に活かしていきます。このプランも、最終的にはご自身で星読みカレンダーを使い続けられる状態を目指します。一人ひとりにじっくり向き合うため、常に1名様限定でご案内しています。
           </p>
-          <span class="plan-list-label">含まれるもの</span>
-          <ul>
-            <li>JUPITERのすべての内容</li>
-            <li>1対1の個別コンサルティング（全3回）</li>
-            <li>カレンダー設計に活かす、ホロスコープの読み解き</li>
-          </ul>
+          <details class="plan-toggle">
+            <summary>サービス内容を見る</summary>
+            <div class="plan-toggle-body">
+              <span class="plan-list-label">含まれるもの</span>
+              <ul>
+                <li>JUPITERのすべての内容</li>
+                <li>1対1の個別コンサルティング（全3回）</li>
+                <li>カレンダー設計に活かす、ホロスコープの読み解き</li>
+              </ul>
+            </div>
+          </details>
           <a href="SUN_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
         </div>
       </div>
@@ -2418,24 +2772,51 @@
   <section class="disclaimer">
     <div class="disclaimer-inner">
       <h3>LEGAL NOTICE ／ 表示・成果に関するご案内</h3>
-      <ol>
-        <li><strong style="color:var(--paper)">プログラムの内容について。</strong>本プログラムは、星読みカレンダーの構築方法、AIツールの活用方法、Googleカレンダー等の設定手順を学ぶための講座です。スキルの習得度、活用範囲、完成までの進行には、受講者様の環境・経験・取り組み状況により個人差があります。</li>
-        <li><strong style="color:var(--paper)">占星術的な情報の扱いについて。</strong>本プログラムで扱う占星術的な情報は、日々の行動を考えるための参考情報であり、特定の成果、成功、問題回避を保証するものではありません。最終的な判断や行動は、ご自身の状況に合わせて行っていただくものとなります。</li>
-        <li><strong style="color:var(--paper)">外部ツール・AIの仕様について。</strong>Google・AIツール各社のアップデートにより、画面表示や操作手順が変更される場合があります。また、AIの回答精度は保証されるものではありません。本プログラムでは、特定の操作だけでなく、変化に対応しやすい考え方もあわせてお伝えします。一部の外部ツールは、より快適にご利用いただくために有料プランが必要となる場合があります。</li>
-        <li><strong style="color:var(--paper)">代行業務について。</strong>セキュリティ保護の観点から、パスワードのお預かりや設定代行は行っておりません。ご自身の大切なアカウントを守りながら進められるよう、手順を確認しながら取り組んでいただく形となります。</li>
-        <li><strong style="color:var(--paper)">自習室チャットについて。</strong>参加者専用チャットは、参加者同士の交流・進捗共有を目的とした場です。Yokoからの個別回答・添削・質問対応を保証するものではなく、正式な質問対応・実践フィードバックはJUPITER以上のプランに含まれます。</li>
-      </ol>
+      <div class="legal-list">
+        <details class="legal-item">
+          <summary>プログラムの内容について</summary>
+          <div class="legal-body">本プログラムは、星読みカレンダーの構築方法、AIツールの活用方法、Googleカレンダー等の設定手順を学ぶための講座です。スキルの習得度、活用範囲、完成までの進行には、受講者様の環境・経験・取り組み状況により個人差があります。</div>
+        </details>
+        <details class="legal-item">
+          <summary>占星術的な情報の扱いについて</summary>
+          <div class="legal-body">本プログラムで扱う占星術的な情報は、日々の行動を考えるための参考情報であり、特定の成果、成功、問題回避を保証するものではありません。最終的な判断や行動は、ご自身の状況に合わせて行っていただくものとなります。</div>
+        </details>
+        <details class="legal-item">
+          <summary>外部ツール・AIの仕様について</summary>
+          <div class="legal-body">Google・AIツール各社のアップデートにより、画面表示や操作手順が変更される場合があります。また、AIの回答精度は保証されるものではありません。本プログラムでは、特定の操作だけでなく、変化に対応しやすい考え方もあわせてお伝えします。一部の外部ツールは、より快適にご利用いただくために有料プランが必要となる場合があります。</div>
+        </details>
+        <details class="legal-item">
+          <summary>代行業務について</summary>
+          <div class="legal-body">セキュリティ保護の観点から、パスワードのお預かりや設定代行は行っておりません。ご自身の大切なアカウントを守りながら進められるよう、手順を確認しながら取り組んでいただく形となります。</div>
+        </details>
+        <details class="legal-item">
+          <summary>自習室チャットについて</summary>
+          <div class="legal-body">参加者専用チャットは、参加者同士の交流・進捗共有を目的とした場です。Yokoからの個別回答・添削・質問対応を保証するものではなく、正式な質問対応・実践フィードバックはJUPITER以上のプランに含まれます。</div>
+        </details>
+      </div>
 
       <h3 style="margin-top:56px;">受講にあたって ／ 取引条件</h3>
       <p style="font-size:14px;color:var(--moon);line-height:2;text-align:center;max-width:680px;margin:0 auto 28px;">
         お申し込みの前に、以下の条件をご確認ください。詳細はお申し込みページにも明記いたします。
       </p>
-      <ol>
-        <li><strong style="color:var(--paper)">提供期間・視聴期限。</strong>講座は3ヶ月間のプログラムです。動画コンテンツの視聴期限、開始日・終了日は、お申し込みページおよび受講案内にてご確認いただけます。</li>
-        <li><strong style="color:var(--paper)">サポート範囲。</strong>JUPITER・SUNプランの質問対応・フィードバックの範囲、グループレッスン（Zoom）の開催日時および欠席時の取り扱いは、受講案内にて明示いたします。</li>
-        <li><strong style="color:var(--paper)">お支払い・解約・返金。</strong>販売価格・お支払い方法・お支払い時期、ならびに途中解約・返金に関する取り扱いは、特定商取引法に基づき、お申し込みページに記載いたします。デジタルコンテンツの性質上、返金の可否には条件が設けられる場合があります。</li>
-        <li><strong style="color:var(--paper)">事業者情報。</strong>事業者の名称・所在地・連絡先等の表示は、特定商取引法に基づきお申し込みページに記載いたします。</li>
-      </ol>
+      <div class="legal-list">
+        <details class="legal-item">
+          <summary>提供期間・視聴期限</summary>
+          <div class="legal-body">講座は3ヶ月間のプログラムです。動画コンテンツの視聴期限、開始日・終了日は、お申し込みページおよび受講案内にてご確認いただけます。</div>
+        </details>
+        <details class="legal-item">
+          <summary>サポート範囲</summary>
+          <div class="legal-body">JUPITER・SUNプランの質問対応・フィードバックの範囲、グループレッスン（Zoom）の開催日時および欠席時の取り扱いは、受講案内にて明示いたします。</div>
+        </details>
+        <details class="legal-item">
+          <summary>お支払い・解約・返金</summary>
+          <div class="legal-body">販売価格・お支払い方法・お支払い時期、ならびに途中解約・返金に関する取り扱いは、特定商取引法に基づき、お申し込みページに記載いたします。デジタルコンテンツの性質上、返金の可否には条件が設けられる場合があります。</div>
+        </details>
+        <details class="legal-item">
+          <summary>事業者情報</summary>
+          <div class="legal-body">事業者の名称・所在地・連絡先等の表示は、特定商取引法に基づきお申し込みページに記載いたします。</div>
+        </details>
+      </div>
     </div>
   </section>
 
