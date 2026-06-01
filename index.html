@@ -1652,6 +1652,107 @@
     .family-closing strong { font-size: 18px; }
   }
 
+  /* ─── Letter from Yoko (final push) ─── */
+  .letter {
+    background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
+    position: relative;
+  }
+  .letter-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .letter-eyebrow {
+    font-family: var(--latin);
+    letter-spacing: 0.5em;
+    font-size: 11px;
+    color: var(--gold-deep);
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  .letter-line {
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    margin: 0 auto 32px;
+  }
+  .letter-title {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    margin-bottom: 48px;
+  }
+  .letter-title em {
+    font-style: normal;
+    color: var(--burgundy);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+  }
+  .letter-body {
+    text-align: left;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--line);
+    padding: 48px 44px;
+    position: relative;
+  }
+  .letter-body::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 40px; height: 40px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+  }
+  .letter-body::after {
+    content: "";
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 40px; height: 40px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+  }
+  .letter-body p {
+    font-size: 16px;
+    color: var(--text-mute);
+    line-height: 2.2;
+    margin-bottom: 22px;
+  }
+  .letter-body p:last-of-type { margin-bottom: 0; }
+  .letter-body p em {
+    font-style: normal;
+    color: var(--text);
+    font-weight: 700;
+  }
+  .letter-sign {
+    text-align: right;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px dotted var(--line);
+  }
+  .letter-sign .from {
+    font-family: var(--latin);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold-deep);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .letter-sign .name {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--burgundy);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 880px) {
+    .letter-body { padding: 36px 26px; }
+  }
+
   /* ─── Rules (light) ─── */
   .rules {
     background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%);
@@ -2537,6 +2638,40 @@
     </div>
   </section>
 
+  <!-- ════ LETTER FROM YOKO (final push) ════ -->
+  <section class="letter">
+    <div class="wrap">
+      <div class="letter-inner">
+        <div class="letter-eyebrow">A LETTER FROM YOKO</div>
+        <span class="letter-line"></span>
+        <h2 class="letter-title">
+          このプログラムは、<br>
+          <em>あなたを守るため</em>に作りました。
+        </h2>
+
+        <div class="letter-body">
+          <p>
+            AIが日常に入り込んでくるこれからの時代、不確かな情報に振り回されたり、よく分からないものに大切なお金や時間を費やしたりしてほしくない。それが、このプログラムを作った一番の理由です。
+          </p>
+          <p>
+            占いも、AIも、便利な反面、<em>「言われたことを、そのまま信じてしまう人」ほど、時間と判断を奪われやすい世界</em>でもあります。だからこそ、ふわっと受け取るのではなく、自分で確かめ、自分で選び、自分で使えるようになっていただきたい。それが、現実主義の占星術リーダーとして、私がいま一番お伝えしたいことです。
+          </p>
+          <p>
+            星読みカレンダーは、その入口にすぎません。3ヶ月かけて身につくのは、<em>AI時代を、自分のペースで、安心して歩いていける力</em>です。その力は、あなた自身の毎日を支えるだけでなく、子や孫、まわりの大切な人を見守る目にもなります。
+          </p>
+          <p>
+            「迷いながらでも、自分の足で歩きたい」── そう思える方を、心からお待ちしています。
+          </p>
+
+          <div class="letter-sign">
+            <div class="from">— FROM —</div>
+            <div class="name">Yoko</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ════ PLANS ════ -->
   <section class="plans has-stars" id="plans">
     <div class="wrap">
@@ -2587,7 +2722,7 @@
               </ul>
             </div>
           </details>
-          <a href="LUNA_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
+          <a href="https://yoor.jp/door/yoko_reading_tarot" class="plan-cta" target="_blank" rel="noopener noreferrer">お申し込みはこちら</a>
         </div>
 
         <!-- JUPITER -->
@@ -2620,7 +2755,7 @@
               </ul>
             </div>
           </details>
-          <a href="JUPITER_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
+          <a href="https://yoor.jp/door/yoko_reading_tarot" class="plan-cta" target="_blank" rel="noopener noreferrer">お申し込みはこちら</a>
         </div>
 
         <!-- SUN -->
@@ -2646,7 +2781,7 @@
               </ul>
             </div>
           </details>
-          <a href="SUN_YOORリンクをここに" class="plan-cta">お申し込みはこちら</a>
+          <a href="https://yoor.jp/door/yoko_reading_tarot" class="plan-cta" target="_blank" rel="noopener noreferrer">お申し込みはこちら</a>
         </div>
       </div>
 
@@ -2764,7 +2899,7 @@
       無理なくつなげていく時間です。<br><br>
       夏至の朝から、あなたの毎日に寄り添う新しい仕組みを、一緒に整えていきましょう。
     </p>
-    <a href="申し込みページのYOORリンクをここに" class="final-cta">お申し込みはこちら</a>
+    <a href="https://yoor.jp/door/yoko_reading_tarot" class="final-cta" target="_blank" rel="noopener noreferrer">お申し込みはこちら</a>
     <div class="final-date">— 2026.06.21 Summer Solstice —</div>
   </section>
 
