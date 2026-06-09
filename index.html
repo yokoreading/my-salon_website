@@ -1184,6 +1184,69 @@
     border-top: 1px dotted var(--line-dark-soft);
   }
 
+  /* ─── LINE consultation (before applying) ─── */
+  .line-consult {
+    max-width: 620px;
+    margin: 44px auto 0;
+    padding: 32px 36px;
+    border: 1px solid var(--line-dark);
+    background: rgba(212,184,106,0.05);
+    text-align: center;
+  }
+  .line-consult-label {
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold-soft);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .line-consult-title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+  .line-consult-text {
+    font-size: 15px;
+    color: var(--moon);
+    line-height: 2.0;
+    margin-bottom: 24px;
+  }
+  .line-consult-text em {
+    font-style: normal;
+    color: var(--gold-soft);
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+  }
+  .line-consult-btn {
+    display: inline-block;
+    font-family: var(--serif);
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: var(--ink-deep);
+    background: var(--gold-soft);
+    text-decoration: none;
+    padding: 14px 36px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+  }
+  .line-consult-btn:hover {
+    background: #f0d488;
+    transform: translateY(-2px);
+  }
+  .line-consult-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--moon-mute);
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
   /* ─── Value (why this program) ─── */
   .value {
     background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
@@ -1924,6 +1987,21 @@
     font-size: 20px;
     letter-spacing: 0.1em;
   }
+  .final-line {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--moon);
+    line-height: 1.9;
+  }
+  .final-line a {
+    color: var(--gold-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  .final-line a:hover { color: #f0d488; }
 
   /* ─── Disclaimer (dark) ─── */
   .disclaimer {
@@ -2810,6 +2888,18 @@
           ※ こちらは参加者同士の交流・共有を目的とした場であり、Yokoからの個別回答・添削・質問対応を保証するものではありません。正式な質問対応・実践フィードバックは、JUPITER以上のプランに含まれます。
         </p>
       </div>
+
+      <div class="line-consult">
+        <div class="line-consult-label">BEFORE YOU APPLY</div>
+        <div class="line-consult-title">申し込む前に、相談したい方へ。</div>
+        <p class="line-consult-text">
+          高額なお買い物だからこそ、迷うのは自然なことです。「自分に合うか」「ついていけるか」など、気になることは公式LINEからお気軽にご相談ください。<em>ご質問は、開始日の6月24日まで</em>承ります。
+        </p>
+        <a href="https://lin.ee/XniTLk0" class="line-consult-btn" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
+        <p class="line-consult-note">
+          ※ 開始日（6月24日）以降は、ご質問の受付を終了いたします。
+        </p>
+      </div>
     </div>
   </section>
 
@@ -2910,6 +3000,9 @@
       夏至の朝から、あなたの毎日に寄り添う新しい仕組みを、一緒に整えていきましょう。
     </p>
     <a href="https://yoor.jp/door/yoko_reading_tarot" class="final-cta" target="_blank" rel="noopener noreferrer">お申し込みはこちら</a>
+    <p class="final-line">
+      申し込む前に相談したい方は、<a href="https://lin.ee/XniTLk0" target="_blank" rel="noopener noreferrer">公式LINE</a>へ（ご質問は6月24日まで）
+    </p>
     <div class="final-date">— 2026.06.21 Summer Solstice —</div>
   </section>
 
