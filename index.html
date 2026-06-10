@@ -1249,7 +1249,7 @@
 
   /* ─── Salon preview image ─── */
   .salon-preview {
-    max-width: 720px;
+    max-width: 920px;
     margin: 44px auto 0;
     text-align: center;
   }
@@ -1266,13 +1266,18 @@
     font-size: 18px;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     letter-spacing: 0.04em;
     line-height: 1.6;
   }
-  .salon-preview-frame {
-    max-width: 560px;
+  .salon-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
     margin: 0 auto;
+  }
+  .salon-preview-frame {
     border: 1px solid var(--line-dark);
     padding: 8px;
     background: rgba(212,184,106,0.04);
@@ -1282,12 +1287,23 @@
     height: auto;
     display: block;
   }
+  .salon-preview-caption {
+    font-size: 13px;
+    color: var(--moon-mute);
+    margin-top: 10px;
+    line-height: 1.7;
+  }
   .salon-preview-note {
-    margin-top: 16px;
+    margin-top: 18px;
     font-size: 12px;
     color: var(--moon-mute);
     line-height: 1.8;
     letter-spacing: 0.03em;
+  }
+  @media (max-width: 780px) {
+    .salon-preview-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ─── Value (why this program) ─── */
@@ -2934,12 +2950,19 @@
 
       <div class="salon-preview">
         <div class="salon-preview-label">INSIDE THE PROGRAM</div>
-        <div class="salon-preview-title">受講の場所は、こんな雰囲気です。</div>
-        <div class="salon-preview-frame">
-          <img src="salon-image.png" alt="星読みカレンダー構築プログラムの受講ルームのイメージ。Phaseごとの動画レッスンや自習室チャットなどがトークルームとして並んでいる様子。" loading="lazy">
+        <div class="salon-preview-title">受講の場所と出来上がりイメージ例</div>
+        <div class="salon-preview-grid">
+          <div class="salon-preview-frame">
+            <img src="salon-image.png" alt="星読みカレンダー構築プログラムの受講ルームのイメージ。Phaseごとの動画レッスンや自習室チャットなどがトークルームとして並んでいる様子。" loading="lazy">
+            <div class="salon-preview-caption">受講環境のイメージ</div>
+          </div>
+          <div class="salon-preview-frame">
+            <img src="001.png" alt="完成イメージ例：星読みカレンダー構築プログラムの画面例。" loading="lazy">
+            <div class="salon-preview-caption">出来上がりイメージ例</div>
+          </div>
         </div>
         <p class="salon-preview-note">
-          ※ 受講環境のイメージです。ご利用いただける部屋（レッスン・サポート）は、プランによって異なり、内容は変更になる場合があります。
+          ※ 画像はイメージです。実際の表示や内容は環境により異なる場合があります。
         </p>
       </div>
 
