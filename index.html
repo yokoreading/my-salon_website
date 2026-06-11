@@ -1249,7 +1249,7 @@
 
   /* ─── Salon preview image ─── */
   .salon-preview {
-    max-width: 920px;
+    max-width: 720px;
     margin: 44px auto 0;
     text-align: center;
   }
@@ -1266,18 +1266,13 @@
     font-size: 18px;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
     letter-spacing: 0.04em;
     line-height: 1.6;
   }
-  .salon-preview-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-    align-items: start;
-    margin: 0 auto;
-  }
   .salon-preview-frame {
+    max-width: 560px;
+    margin: 0 auto;
     border: 1px solid var(--line-dark);
     padding: 8px;
     background: rgba(212,184,106,0.04);
@@ -1287,23 +1282,12 @@
     height: auto;
     display: block;
   }
-  .salon-preview-caption {
-    font-size: 13px;
-    color: var(--moon-mute);
-    margin-top: 10px;
-    line-height: 1.7;
-  }
   .salon-preview-note {
-    margin-top: 18px;
+    margin-top: 16px;
     font-size: 12px;
     color: var(--moon-mute);
     line-height: 1.8;
     letter-spacing: 0.03em;
-  }
-  @media (max-width: 780px) {
-    .salon-preview-grid {
-      grid-template-columns: 1fr;
-    }
   }
 
   /* ─── Value (why this program) ─── */
@@ -2199,7 +2183,7 @@
       <div class="hero-meta">
         <div><strong>3 Months</strong>3ヶ月集中プログラム</div>
         <div><strong>1 Skill</strong>長く活用しやすい考え方</div>
-        <div><strong>06.21</strong>夏至・販売開始</div>
+        <div><strong>06.21</strong>夏至・朝10時販売開始</div>
       </div>
     </div>
   </section>
@@ -2950,31 +2934,36 @@
 
       <div class="salon-preview">
         <div class="salon-preview-label">INSIDE THE PROGRAM</div>
-        <div class="salon-preview-title">受講の場所と出来上がりイメージ例</div>
-        <div class="salon-preview-grid">
-          <div class="salon-preview-frame">
-            <img src="salon-image.png" alt="星読みカレンダー構築プログラムの受講ルームのイメージ。Phaseごとの動画レッスンや自習室チャットなどがトークルームとして並んでいる様子。" loading="lazy">
-            <div class="salon-preview-caption">受講環境のイメージ</div>
-          </div>
-          <div class="salon-preview-frame">
-            <img src="001.png" alt="完成イメージ例：星読みカレンダー構築プログラムの画面例。" loading="lazy">
-            <div class="salon-preview-caption">出来上がりイメージ例</div>
-          </div>
+        <div class="salon-preview-title">受講の場所は、こんな雰囲気です。</div>
+        <div class="salon-preview-frame">
+          <img src="salon-image.png" alt="星読みカレンダー構築プログラムの受講ルームのイメージ。Phaseごとの動画レッスンや自習室チャットなどがトークルームとして並んでいる様子。" loading="lazy">
         </div>
         <p class="salon-preview-note">
-          ※ 画像はイメージです。実際の表示や内容は環境により異なる場合があります。
+          ※ 受講環境のイメージです。ご利用いただける部屋（レッスン・サポート）は、プランによって異なり、内容は変更になる場合があります。
         </p>
       </div>
 
       <div class="line-consult">
         <div class="line-consult-label">BEFORE YOU APPLY</div>
+        <div class="line-consult-title">お申し込みの前に、ご準備を。</div>
+        <p class="line-consult-text">
+          お申し込みには、YOOR（決済プラットフォーム）の会員登録（無料）が必要です。<em>6月21日の朝10時、販売開始</em>後にスムーズにお手続きいただけるよう、事前のご登録をおすすめします。
+        </p>
+        <a href="https://yoor.jp/door/yoko_reading_tarot" class="line-consult-btn" target="_blank" rel="noopener noreferrer">YOORで会員登録（無料）</a>
+        <p class="line-consult-note">
+          ※ 受講費は一括でのお支払いとなります。ご利用予定のカードの利用上限も、あわせてご確認いただくと安心です。
+        </p>
+      </div>
+
+      <div class="line-consult">
+        <div class="line-consult-label">ANY QUESTIONS?</div>
         <div class="line-consult-title">申し込む前に、相談したい方へ。</div>
         <p class="line-consult-text">
-          高額なお買い物だからこそ、迷うのは自然なことです。「自分に合うか」「ついていけるか」など、気になることは公式LINEからお気軽にご相談ください。<em>ご質問は、開始日の6月24日まで</em>承ります。
+          高額なお買い物だからこそ、迷うのは自然なことです。「自分に合うか」「ついていけるか」など、気になることは公式LINEからお気軽にご相談ください。<em>ご質問は、コンテンツ公開日の6月24日まで</em>承ります。
         </p>
         <a href="https://lin.ee/XniTLk0" class="line-consult-btn" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
         <p class="line-consult-note">
-          ※ 開始日（6月24日）以降は、ご質問の受付を終了いたします。
+          ※ コンテンツ公開日（6月24日）以降は、ご質問の受付を終了いたします。
         </p>
       </div>
     </div>
@@ -3050,13 +3039,13 @@
       <span class="eyebrow-line"></span>
       <h2 class="section-title">夏至の日、すべてが始まる。</h2>
       <p class="section-sub">
-        販売開始は、一年で最も陽の長い日。<br>
+        販売開始は、一年で最も陽の長い日の朝10時。<br>
         新しい光の流れに乗って、3ヶ月後のあなたへ。
       </p>
 
       <div class="solstice-mark">
         <div class="solstice-date">2026 . 06 . 21</div>
-        <div class="solstice-label">SUMMER SOLSTICE — 夏至</div>
+        <div class="solstice-label">SUMMER SOLSTICE — 夏至・朝10時 販売開始</div>
       </div>
     </div>
   </section>
@@ -3078,7 +3067,7 @@
     </p>
     <a href="https://yoor.jp/door/yoko_reading_tarot" class="final-cta" target="_blank" rel="noopener noreferrer">お申し込みはこちら</a>
     <p class="final-line">
-      申し込む前に相談したい方は、<a href="https://lin.ee/XniTLk0" target="_blank" rel="noopener noreferrer">公式LINE</a>へ（ご質問は6月24日まで）
+      申し込む前に相談したい方は、<a href="https://lin.ee/XniTLk0" target="_blank" rel="noopener noreferrer">公式LINE</a>へ（ご質問はコンテンツ公開日の6月24日まで）
     </p>
     <div class="final-date">— 2026.06.21 Summer Solstice —</div>
   </section>
@@ -3125,7 +3114,7 @@
         </details>
         <details class="legal-item">
           <summary>お支払い・解約・返金</summary>
-          <div class="legal-body">販売価格・お支払い方法・お支払い時期は、特定商取引法に基づきお申し込みページに記載いたします。2026年6月23日までは、YOOR上の退会手続きによりキャンセル可能です。6月24日のコンテンツ公開開始以降は、デジタルコンテンツの性質上、途中退会を含めいかなる理由でも返金いたしかねます。開始日以降にお申し込みの場合も同様です。詳細はお申し込みページの特定商取引法に基づく表記をご確認ください。</div>
+          <div class="legal-body">販売価格・お支払い方法・お支払い時期は、特定商取引法に基づきお申し込みページに記載いたします。2026年6月23日までは、YOOR上の退会手続きによりキャンセル可能です。6月24日のコンテンツ公開開始以降は、デジタルコンテンツの性質上、途中退会を含めいかなる理由でも返金いたしかねます。コンテンツ公開日以降にお申し込みの場合も同様です。詳細はお申し込みページの特定商取引法に基づく表記をご確認ください。</div>
         </details>
         <details class="legal-item">
           <summary>事業者情報</summary>
